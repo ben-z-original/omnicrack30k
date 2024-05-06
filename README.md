@@ -1,56 +1,100 @@
 # OmniCrack30k
 ## Overview
+![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/618579da-8f02-41c8-8a09-657bc18de859)
 
 ![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/7a09d4d1-8dc0-40b1-8a1c-74a6c0e7b9d9)
 
-## Download
+## Download Dataset(s)
 
-Due to license issues the dataset can unfortunately not be redistributed as one. Thus, they need to be downloaded from the original sources and prepared according to the following recipes.
+Due to license issues, the dataset can unfortunately not be redistributed as one. Thus, they need to be downloaded from the original sources and prepared according to the following recipes.
 
 ### S2DS, UAV75, Khanh11k
-These datasets are directly provided due to the authors' (partial) involvement of the acquisition and creation process.
+Based on the authors' partial or full involvement in the acquisition and creation process, these datasets can be **directly provided**.
+
+There exists no naming convention for the dataset provided by ([Link](https://github.com/khanhha/crack_segmentation), accessed Aug 16, 2023). Based on the name of the repository owner and the approximate number of samples it will referred to as **Khanh11k**. Khanh11k is a collection of other datasets including CrackTree200, CFD, CRACK500, DeepCrack, and parts of AEL. Labels were stored in JPG format which potentially accounts for artifacts in some labels. Many images were patched and unisotropicly scaled which led to distortions.
+
+The **Structural Defects Dataset** (S2DS) was published with \textcite{benz2022image} ([Link](https://github.com/ben-z-original/s2ds)). It contains cracks alongside other classes in the representation required for real-world bridge inspection e.g., by means of UAS. Due to the limited number of images, also the negative samples are kept.
+
+The **Unmanned Aerial Vehicle** dataset (UAV75) was published with \textcite{benz2019crack} ([Link](https://github.com/ben-z-original/uav75). It represents cracks in a real-world inspection scenario with images captured by a UAS where cracks regularly occur as 1-5\,px wide structures. The artifacts resulting from weathering and shadow cast on the planking structures form a distractor featured in the 'planking pattern' class.
+
+The samples can be found in the directory ```dataset``` in this repository.
 
 ### AEL
 \footnote{\url{https://www.irit.fr/~Sylvie.Chambon/Crack_Detection_Database.html}, accessed August 16, 2023.}: The dataset AEL -- an acronym of the subsets -- was published by \textcite{amhaz2015automatic}. It consists of the three subsets, AIGLE\textunderscore RN, ESAR, and LCMS. Last of which provides images of low quality. The images are of variable sizes and exclusively show \textit{asphalt} cracks.
 
+Link seems to have vanished.
+
 ### BCL
-\footnote{\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RURXSH}, accessed August 16, 2023.}: Details of the \textit{Bridge Crack Library} (BCL) are provided in \textcite{ye2021structural}. The samples are patches from larger images. The cracks are shown in a macro-like fashion which can account for the visible blur in many samples. 2,036 samples show cracks in \textit{steel}, 5,769 cracks in \textit{concrete} and \textit{stone}, and 3,195 are negatives samples for crack-line artifacts. No information on data splits are provided. Featuring only synthetic cracks BCL\,2.0 is disregarded here\footnote{\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TUFAJT}, accessed August 17.2023.}.
+Details of the *Bridge Crack Library* (BCL) are provided in \textcite{ye2021structural}. The samples are patches from larger images. The cracks are shown in a macro-like fashion which can account for the visible blur in many samples. 2,036 samples show cracks in *steel*, 5,769 cracks in *concrete* and *stone*, and 3,195 are negatives samples for crack-line artifacts. No information on data splits are provided. Featuring only synthetic cracks BCL 2.0 ([Link](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TUFAJT), accessed Aug 17, 2023) is disregarded.
+
+Download the zip of the dataset from [Link](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RURXSH#) (accessed May 6, 2024).
+Then TODO
+
 
 ### Ceramic
 \footnote{\url{https://github.com/gerivansantos/ceramic-cracks-dataset}, accessed August 16, 2023.}: Published in the context of \textcite{junior2021ceramic}. No labels are provided for the test set. The images show cracks in a large variety of \textit{ceramic} tiles.
-	
+
+```
+git clone https://github.com/gerivansantos/ceramic-cracks-dataset.git
+git checkout 22f272854795c40c5aaab1470b4ffffb55666ced # check if that is working
+```
+Then run from (root dir) TODO
+
+
 ### CFD
-\footnote{\url{https://github.com/cuilimeng/CrackForest-dataset}, accessed August 16, 2023.}: Short for \textit{CrackForest} dataset. Published as part of \textcite{shi2016automatic}. The images show pavement cracks almost exclusively in \textit{asphalt} surfaces. The exact split into training and test set is unknown; the share is 60\%/40\%. 
-	
-### Conglomerate
-\footnote{\url{https://data.lib.vt.edu/articles/dataset/Concrete_Crack_Conglomerate_Dataset/16625056}, accessed August 16, 2023.}: Used in publication \textcite{bianchi2022development}. Based on Khanh11k it forms a collection of datasets including CFD, Crack500, CrackTree200, DeepCrack, GAPs, etc. 
-	
+CFD is short for *CrackForest dataset*. Published as part of \textcite{shi2016automatic}. The images show pavement cracks almost exclusively in *asphalt* surfaces. The exact split into training and test set is unknown; the share is 60%/40%. 
+
+```
+git clone https://github.com/cuilimeng/CrackForest-dataset
+git checkout ed57c2d96754e6c7d105805cd29aeeb3a799f267
+```
+Then TODO
+
+
 ### CRACK500
 \footnote{\url{https://github.com/fyangneil/pavement-crack-detection}, accessed August 16, 2023.}: The dataset is provided in the context of \textcite{yang2019feature}. The origin of the dataset can be traced to \textcite{zhang2016road} who, however, seem to not provide any download link. The provided images by \textcite{yang2019feature} happen to be smaller than the size reported by \parencite{zhang2016road}. The images are varying in size and exclusively show \textit{pavement} cracks of variable widths.
-	
-### CrackLS315
-\footnote{\url{https://github.com/qinnzou/DeepCrack}, accessed August 16, 2023.}: Published in connection with \textcite{zou2018deepcrack}. The images show \textit{asphalt} cracks with slight illumination inhomogeneities.
-	
-### CrackSeg9k
-\footnote{\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EGIEBY}, accessed August 16, 2023.}: \textcite{kulkarni2022crackseg9k} combined and transformed the Khanh11k, Masonry, and Ceramic datasets. As of August 16, 2023 the downloadable dataset encompassed roughly 6k samples instead of the supposed 9k.%, primarily due to the missing CRACK500 subset. 
-	
-### CrackTree200
-\footnote{Download as part of CrackTree260, \url{https://github.com/qinnzou/DeepCrack}, accessed August 16, 2023.}: Also referred to as CrackTree206 was published by \textcite{zou2012cracktree}. It exclusively shows \textit{asphalt} crack in relatively homogeneous conditions.	
- 
-### CrackTree260
-\footnote{\url{https://github.com/qinnzou/DeepCrack}, accessed August 16, 2023.}: Is an extension of CrackTree200 and was published by \textcite{zou2018deepcrack}. CrackTree200 was extended by images with lower quality and cracks with sophisticated net-like structure. All images show \textit{asphalt} cracks under relatively homogeneous conditions. 
 
-### CRKWH100
-\footnote{\url{https://github.com/qinnzou/DeepCrack}, accessed August 16, 2023.}: Published in connection with \textcite{zou2018deepcrack}. The images show \textit{asphalt} cracks with slight illumination inhomogeneities. It contains five images with white cracks\footnote{The segmentation of white cracks is not a subject of this theses. For dataset consistency the images with white cracks are, however, kept in the CRKWH100 dataset.}.
+Baidu
+TODO
+
+ 
+### CrackTree260, CrackLS315, CRKWH100, and Stone331
+CrackTree260 an extension of CrackTree200 (also sometimes referred to as CrackTree206) and was published by \textcite{zou2018deepcrack}. CrackTree200 was extended by images with lower quality and cracks with sophisticated net-like structure. All images show *asphalt* cracks under relatively homogeneous conditions. The images of CrackLS315 show *asphalt* cracks with slight illumination inhomogeneities.  The images of CRKWH100 show *asphalt* cracks with slight illumination inhomogeneities. It contains five images with white cracks. Even though the segmentation of white cracks is not a subject of this work, the images are kept for dataset consistency. The images of Stone331 show cracks in *stone* under controlled conditions. 
+
+The github repo [Link](https://github.com/qinnzou/DeepCrack) hosts the code, the datasets are provided through Baidu.
+
+Baidu
+TODO
+
 
 ### CrSpEE
 \footnote{\url{https://github.com/OSUPCVLab/CrSpEE}, accessed August 16, 2023.}: The \textit{Crack and Spalling Dataset in Context of Extreme Events} (CrSpEE) is a dataset for instance segmentation of cracks and spalling published by \textcite{bai2021detecting}. It shows cracks (and spalling) `in the wild', i.e.\ on challenging images with a substantial amount of distractors (people, context, background, etc.). Due to partly large image sizes and the reduced added value of the negative samples provided, the training set was filtered for cracks.
 
+```
+git clone https://github.com/OSUPCVLab/CrSpEE
+git checkout 80418384273daf9364ff2a2d8c5535358ea953f5
+```
+
+unzip TODO
+
+
 ### CSSC
 \footnote{\url{https://github.com/CCNYRoboticsLab/concreteIn_inpection_VGGF}, accessed August 16, 2023.}: The \textit{Concrete Structure Spalling and Crack} dataset (CSSC) was published by \textcite{yang2017deep}. All samples were systematically augmented by a horizontal and vertical flip. Since data augmentation usually delegated to the training procedure, the augmented versions are removed. The images show cracks mostly in \textit{concrete} and \textit{stone} as well as spalling. Adding no substantial value, the spalling subset was removed from the training set.
 
+```
+git clone https://github.com/CCNYRoboticsLab/concreteIn_inpection_VGGF
+git checkout 68804d570f8adce6601c04e2ccbd8aeb9b01e4ba
+```
+
 ### DeepCrack
 \footnote{\url{https://github.com/yhlleo/DeepCrack}, accessed August 17, 2023.}: The dataset was published together with the DeepCrackL approach \parencite{liu2019deepcrack}. The images show cracks of variable widths (including very wide cracks) in different surfaces such as concrete and stone. Some images are blurry.
+
+```
+git clone https://github.com/yhlleo/DeepCrack
+git checkout 8202a60701068645c883ed68b95fd3f30914d90c
+```
+
+TODO
 
 ### DIC
 \footnote{\url{https://zenodo.org/record/4307686}, accessed August 17, 2023.}: Published in the context of \textcite{rezaie2020comparison} which investigates digital image correlation (DIC) for deformable image matching. The images show crack on a \textit{plastered} wallett (a specimen) with random black speckles under homogeneous, lab-like conditions.
@@ -64,20 +108,23 @@ These datasets are directly provided due to the authors' (partial) involvement o
 ### Masonry
 \footnote{\url{https://github.com/dimitrisdais/crack_detection_CNN_masonry}, accessed August 16, 2023.}: Published in the context of \textcite{dais2021automatic}. The images show crack in variable kinds of \textit{masonry} most of which are brick walls. The negative samples are not provided. Due to lack of information the re-establishment of the train/test split is probably flawed.
 
-### Kaggle11k
-\footnote{\url{https://www.kaggle.com/datasets/lakshaymiddha/crack-segmentation-dataset}, accessed August 16, 2023.}: As the subsequent overlap analysis will show, an identical copy of Khanh11k without reference.
+```
+git clone https://github.com/dimitrisdais/crack_detection_CNN_masonry
+git checkout a34c9ee9a3446accc27c2670f29f3b8de0e86772
+```
 
-### Khanh11k
-\footnote{\url{https://github.com/khanhha/crack_segmentation}, accessed August 16, 2023.}: There exists no naming convention for this dataset. The name \textit{Khanh11k} is proposed: it refers to the name of the repository owner and the approximate number of samples. Khanh11k is a collection of other datasets including CrackTree200, CFD, CRACK500, DeepCrack, and parts of AEL. Labels were stored in JPG format which potentially accounts for artifacts in some labels. Many images were patched and unisotropicly scaled which led to distortions.
-
-### S2DS
-\footnote{\url{https://github.com/ben-z-original/s2ds}, accessed August 17, 2023.}: The \textit{Structural Defects Dataset} (S2DS) was created in the context of this thesis and published in connection with \textcite{benz2022image}. It contains cracks alongside other classes in the representation required for real-world bridge inspection e.g., by means of UAS. Due to the limited number of images, also the negative samples are kept. Further details are provided in Section\,\ref{sec:s2ds}.
-
-### Stone331
-\footnote{\url{https://github.com/qinnzou/DeepCrack}}: Published in connection with \textcite{zou2018deepcrack}. The images show cracks in \textit{stone} under homogeneous conditions. 
 
 ### TopoDS
 \footnote{\url{https://zenodo.org/record/6651663}, accessed August 17, 2023.}: Published in the context of \textcite{pantoja2022topo}. TopoDS forms an `in the wild' dataset with challenging images containing a multitude of distractors (other structural support structures, background objects, etc.). The centerline annotations often are coarse and show offsets to the presumed centerline. The images show cracks on a multitude of structures in a post-disaster scenario. Demolition edges of spallings are also labeled as crack.
 
-### UAV75
-\footnote{\url{https://github.com/christiab/uav75}, accessed August 17, 2023.}: The \textit{Unmanned Aerial Vehicle} dataset (UAV75) was created in the context of this thesis and published in connection with \textcite{benz2019crack}. It represents cracks in a real-world inspection scenario with images captured by a UAS where cracks regularly occur as 1-5\,px wide structures. The artifacts resulting from weathering and shadow cast on the planking structures form a distractor featured in the `planking pattern' class.
+
+## Other Data Collections
+### Conglomerate
+The **Conglomerate** dataset ([Link](https://data.lib.vt.edu/articles/dataset/Concrete_Crack_Conglomerate_Dataset/16625056), accessed Aug 16, 2023) is used in the publication \textcite{bianchi2022development}. Based on *Khanh11k* it forms a collection of datasets including CFD, Crack500, CrackTree200, DeepCrack, GAPs, etc. and does not add new samples.
+
+### CrackSeg9k
+**CrackSeg9k** ([Link](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EGIEBY), accessed Aug 16, 2023) is proposed in \textcite{kulkarni2022crackseg9k}. It combines and transforms the Khanh11k, Masonry, and Ceramic datasets and does not add new samples. As of Aug 16, 2023 the downloadable dataset encompassed roughly 6k samples instead of the supposed 9k, primarily due to the missing CRACK500 subset. 
+
+### Kaggle11k
+The **Kaggle11k** dataset ([Link](https://www.kaggle.com/datasets/lakshaymiddha/crack-segmentation-dataset), accessed Aug 16, 2023) forms an identical copy of *Khanh11k* without reference.
+	
