@@ -57,6 +57,8 @@ Then TODO
 Baidu
 TODO
 
+Many images require rotation
+
  
 ### CrackTree260, CrackLS315, CRKWH100, and Stone331
 CrackTree260 an extension of CrackTree200 (also sometimes referred to as CrackTree206) and was published by \textcite{zou2018deepcrack}. CrackTree200 was extended by images with lower quality and cracks with sophisticated net-like structure. All images show *asphalt* cracks under relatively homogeneous conditions. The images of CrackLS315 show *asphalt* cracks with slight illumination inhomogeneities.  The images of CRKWH100 show *asphalt* cracks with slight illumination inhomogeneities. It contains five images with white cracks. Even though the segmentation of white cracks is not a subject of this work, the images are kept for dataset consistency. The images of Stone331 show cracks in *stone* under controlled conditions. 
