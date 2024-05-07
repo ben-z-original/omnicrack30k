@@ -6,18 +6,17 @@
 
 ## Download Dataset(s)
 
-Due to license issues, the dataset can unfortunately not be redistributed as one. Thus, they need to be downloaded from the original sources and prepared according to the following recipes.
+Due to license issues, the dataset can unfortunately not be redistributed as one. Thus, they need to be downloaded from the original sources and prepared according to the following recipes. The samples can be found in the directory ```dataset``` in this repository.
 
 ### S2DS, UAV75, Khanh11k
 Based on the authors' partial or full involvement in the acquisition and creation process, these datasets can be **directly provided**.
 
-There exists no naming convention for the dataset provided by ([Link](https://github.com/khanhha/crack_segmentation), accessed Aug 16, 2023). Based on the name of the repository owner and the approximate number of samples it will referred to as **Khanh11k**. Khanh11k is a collection of other datasets including CrackTree200, CFD, CRACK500, DeepCrack, and parts of AEL. Labels were stored in JPG format which potentially accounts for artifacts in some labels. Many images were patched and unisotropicly scaled which led to distortions.
+<sub>There exists no naming convention for the dataset provided by ([Link](https://github.com/khanhha/crack_segmentation), accessed Aug 16, 2023). Based on the name of the repository owner and the approximate number of samples it will be referred to as **Khanh11k**. Khanh11k is a collection of other datasets including CrackTree200, CFD, CRACK500, DeepCrack, and parts of AEL. Labels were stored in JPG format which potentially accounts for artifacts in some labels. Many images were patched and unisotropicly scaled which led to distortions.
 
-The **Structural Defects Dataset** (S2DS) was published with \textcite{benz2022image} ([Link](https://github.com/ben-z-original/s2ds)). It contains cracks alongside other classes in the representation required for real-world bridge inspection e.g., by means of UAS. Due to the limited number of images, also the negative samples are kept.
+<sub>The **Structural Defects Dataset** (S2DS) was published with \textcite{benz2022image} ([Link](https://github.com/ben-z-original/s2ds)). It contains cracks alongside other classes in the representation required for real-world bridge inspection e.g., by means of UAS. Due to the limited number of images, also the negative samples are kept.
 
-The **Unmanned Aerial Vehicle** dataset (UAV75) was published with \textcite{benz2019crack} ([Link](https://github.com/ben-z-original/uav75). It represents cracks in a real-world inspection scenario with images captured by a UAS where cracks regularly occur as 1-5\,px wide structures. The artifacts resulting from weathering and shadow cast on the planking structures form a distractor featured in the 'planking pattern' class.
+<sub>The **Unmanned Aerial Vehicle** dataset (UAV75) was published with \textcite{benz2019crack} ([Link](https://github.com/ben-z-original/uav75). It represents cracks in a real-world inspection scenario with images captured by a UAS where cracks regularly occur as 1-5\,px wide structures. The artifacts resulting from weathering and shadow cast on the planking structures form a distractor featured in the 'planking pattern' class.
 
-The samples can be found in the directory ```dataset``` in this repository.
 
 ### AEL
 \footnote{\url{https://www.irit.fr/~Sylvie.Chambon/Crack_Detection_Database.html}, accessed August 16, 2023.}: The dataset AEL -- an acronym of the subsets -- was published by \textcite{amhaz2015automatic}. It consists of the three subsets, AIGLE\textunderscore RN, ESAR, and LCMS. Last of which provides images of low quality. The images are of variable sizes and exclusively show \textit{asphalt} cracks.
