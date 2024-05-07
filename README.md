@@ -15,7 +15,7 @@ Based on the authors' partial or full involvement in the acquisition and creatio
 
 <sub>The **Structural Defects Dataset** (S2DS) was published with \textcite{benz2022image} ([Link](https://github.com/ben-z-original/s2ds)). It contains cracks alongside other classes in the representation required for real-world bridge inspection e.g., by means of UAS. Due to the limited number of images, also the negative samples are kept.
 
-<sub>The **Unmanned Aerial Vehicle** dataset (UAV75) was published with \textcite{benz2019crack} ([Link](https://github.com/ben-z-original/uav75). It represents cracks in a real-world inspection scenario with images captured by a UAS where cracks regularly occur as 1-5\,px wide structures. The artifacts resulting from weathering and shadow cast on the planking structures form a distractor featured in the 'planking pattern' class.
+<sub>The **Unmanned Aerial Vehicle** dataset (UAV75) was published with \textcite{benz2019crack} ([Link](https://github.com/ben-z-original/uav75). It represents cracks in a real-world inspection scenario with images captured by a UAS where cracks regularly occur as 1-5px wide structures. The artifacts resulting from weathering and shadow cast on the planking structures form a distractor featured in the 'planking pattern' class.
 
 
 ### AEL
