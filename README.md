@@ -8,8 +8,19 @@
 
 Due to license issues, the dataset can unfortunately not be redistributed as one. Thus, they need to be downloaded from the original sources and prepared according to the following recipes. 
 
+
+| Datasets              | #Samples | Link |
+| :---------------- | :------: | ----: |
+| Khanh11k       |      |  |
+| S2DS           |      |  |
+| UAV75    |    |  |
+| |
+| BCL |     | [Link](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TUFAJT) |
+| |
+
+
 ### Khanh11k, S2DS, and UAV75 
-Based on the authors' partial or full involvement in the acquisition and creation process, these datasets can be **directly provided**. The samples can be found in the directory ```dataset``` in this repository.
+Based on the authors' partial or full involvement in the acquisition and creation process, these datasets can be **directly provided**.
 
 <sub>There exists no naming convention for the dataset provided by ([Link](https://github.com/khanhha/crack_segmentation), accessed Aug 16, 2023). Based on the name of the repository owner and the approximate number of samples it will be referred to as **Khanh11k**. Khanh11k is a collection of other datasets including CrackTree200, CFD, CRACK500, DeepCrack, and parts of AEL. Labels were stored in JPG format which potentially accounts for artifacts in some labels. Many images were patched and unisotropicly scaled which led to distortions.
 
@@ -53,6 +64,8 @@ Then TODO
 ### CRACK500
 \footnote{\url{https://github.com/fyangneil/pavement-crack-detection}, accessed August 16, 2023.}: The dataset is provided in the context of \textcite{yang2019feature}. The origin of the dataset can be traced to \textcite{zhang2016road} who, however, seem to not provide any download link. The provided images by \textcite{yang2019feature} happen to be smaller than the size reported by \parencite{zhang2016road}. The images are varying in size and exclusively show \textit{pavement} cracks of variable widths.
 
+As off... the links seem to be dead, see github issue...
+
 Baidu
 TODO
 
@@ -62,11 +75,19 @@ Many images require rotation
 ### CrackTree260, CrackLS315, CRKWH100, and Stone331
 CrackTree260 an extension of CrackTree200 (also sometimes referred to as CrackTree206) and was published by \textcite{zou2018deepcrack}. CrackTree200 was extended by images with lower quality and cracks with sophisticated net-like structure. All images show *asphalt* cracks under relatively homogeneous conditions. The images of CrackLS315 show *asphalt* cracks with slight illumination inhomogeneities.  The images of CRKWH100 show *asphalt* cracks with slight illumination inhomogeneities. It contains five images with white cracks. Even though the segmentation of white cracks is not a subject of this work, the images are kept for dataset consistency. The images of Stone331 show cracks in *stone* under controlled conditions. 
 
-The github repo [Link](https://github.com/qinnzou/DeepCrack) hosts the code, the datasets are provided through Baidu.
+The github repo  hosts the code, the datasets are provided through Baidu.
 
-Baidu
-TODO
-
+1. Download the four datasets based on the links provided in the github repo [Link](https://github.com/qinnzou/DeepCrack)
+```
+	wget https://1drv... #  CrackTree260 & GT dataset
+	wget https://1drv... #  CRKWH100 dataset
+	wget https://1drv... #  CRKWH100 GT
+	wget https://1drv... #  CrackLS315 dataset
+	wget https://1drv... #  CrackLS315 GT
+	wget https://1drv... #  Stone331 dataset
+	wget https://1drv... #  Stone331 GT
+```
+2. Extract...
 
 ### CrSpEE
 \footnote{\url{https://github.com/OSUPCVLab/CrSpEE}, accessed August 16, 2023.}: The \textit{Crack and Spalling Dataset in Context of Extreme Events} (CrSpEE) is a dataset for instance segmentation of cracks and spalling published by \textcite{bai2021detecting}. It shows cracks (and spalling) `in the wild', i.e.\ on challenging images with a substantial amount of distractors (people, context, background, etc.). Due to partly large image sizes and the reduced added value of the negative samples provided, the training set was filtered for cracks.
