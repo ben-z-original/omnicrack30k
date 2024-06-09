@@ -6,7 +6,26 @@
 ![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/7a09d4d1-8dc0-40b1-8a1c-74a6c0e7b9d9)
 
 ## Directory Structure
-After completing all the subsequent steps you will end up with a directory structure for OmniCrack
+After completing all the subsequent downloading steps you will end up with the following directory structure for OmniCrack:
+
+```
+└── omnicrack
+    ├── images
+    │   ├── test [4582 entries exceeds filelimit, not opening dir]
+    │   ├── training [22158 entries exceeds filelimit, not opening dir]
+    │   └── validation [3277 entries exceeds filelimit, not opening dir]
+    ├── annotations
+    │   ├── test [4582 entries exceeds filelimit, not opening dir]
+    │   ├── training [22158 entries exceeds filelimit, not opening dir]
+    │   └── validation [3277 entries exceeds filelimit, not opening dir]
+    │
+    └── [optional] centerlines
+        ├── test [4582 entries exceeds filelimit, not opening dir]
+        ├── training [22158 entries exceeds filelimit, not opening dir]
+        └── validation [3277 entries exceeds filelimit, not opening dir]
+```
+
+
 
 ## Download Dataset(s)
 
