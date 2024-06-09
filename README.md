@@ -6,7 +6,7 @@
 ![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/7a09d4d1-8dc0-40b1-8a1c-74a6c0e7b9d9)
 
 ## Directory Structure
-After completing all the subsequent downloading steps you will end up with the following directory structure for OmniCrack:
+After completing all the subsequent downloading steps you will end up with the following directory structure for OmniCrack30k:
 
 ```
 └── omnicrack30k
