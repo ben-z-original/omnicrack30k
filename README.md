@@ -9,17 +9,12 @@
 After completing all the subsequent downloading steps you will end up with the following directory structure for OmniCrack:
 
 ```
-└── omnicrack
+└── omnicrack30k
     ├── images
     │   ├── test [4582 entries exceeds filelimit, not opening dir]
     │   ├── training [22158 entries exceeds filelimit, not opening dir]
     │   └── validation [3277 entries exceeds filelimit, not opening dir]
-    ├── annotations
-    │   ├── test [4582 entries exceeds filelimit, not opening dir]
-    │   ├── training [22158 entries exceeds filelimit, not opening dir]
-    │   └── validation [3277 entries exceeds filelimit, not opening dir]
-    │
-    └── [optional] centerlines
+    └── annotations
         ├── test [4582 entries exceeds filelimit, not opening dir]
         ├── training [22158 entries exceeds filelimit, not opening dir]
         └── validation [3277 entries exceeds filelimit, not opening dir]
