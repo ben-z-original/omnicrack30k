@@ -7,7 +7,7 @@ July 5, 2024</b>
 </p>
 
 
-# Reference
+## Reference
 ```
 @InProceedings{Benz_2024_CVPR,
     author    = {Benz, Christian and Rodehorst, Volker},
