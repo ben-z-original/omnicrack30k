@@ -20,7 +20,7 @@ Due to license issues, the dataset can unfortunately not be redistributed as one
 
 
 ### Khanh11k, S2DS, and UAV75 
-Based on the authors' partial or full involvement in the acquisition and creation process, these datasets can be **directly provided**.
+Based on the authors' partial or full involvement in the acquisition and creation process, these datasets can be **directly provided**. A zip file can be downloaded from [Drive](https://drive.google.com/file/d/1GaxNlRU2Wq2T_uVCbNHJFNrPaUQ8FlT3/view?usp=sharing).
 
 <sub>There exists no naming convention for the dataset provided by ([Link](https://github.com/khanhha/crack_segmentation), accessed Aug 16, 2023). Based on the name of the repository owner and the approximate number of samples it will be referred to as **Khanh11k**. Khanh11k is a collection of other datasets including CrackTree200, CFD, CRACK500, DeepCrack, and parts of AEL. Labels were stored in JPG format which potentially accounts for artifacts in some labels. Many images were patched and unisotropicly scaled which led to distortions.
 
