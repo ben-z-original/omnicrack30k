@@ -167,4 +167,6 @@ The **Conglomerate** dataset ([Link](https://data.lib.vt.edu/articles/dataset/Co
 
 ### Kaggle11k
 The **Kaggle11k** dataset ([Link](https://www.kaggle.com/datasets/lakshaymiddha/crack-segmentation-dataset), accessed Aug 16, 2023) forms an identical copy of *Khanh11k* without reference.
-	
+
+# Notes
+During the preparation of this repo it was observed that some images in the training and test set show primarily the same region of the structure, i.e. training and test have some overlap and are not as exclusive as desired. I leave that to future generations to eliminate these examples.
