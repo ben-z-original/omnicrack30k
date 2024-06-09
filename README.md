@@ -11,13 +11,13 @@ After completing all the subsequent downloading steps you will end up with the f
 ```
 └── omnicrack30k
     ├── images
-    │   ├── test [4582 entries exceeds filelimit, not opening dir]
     │   ├── training [22158 entries exceeds filelimit, not opening dir]
-    │   └── validation [3277 entries exceeds filelimit, not opening dir]
+    │   ├── validation [3277 entries exceeds filelimit, not opening dir]
+    │   └── test [4582 entries exceeds filelimit, not opening dir]
     └── annotations
-        ├── test [4582 entries exceeds filelimit, not opening dir]
         ├── training [22158 entries exceeds filelimit, not opening dir]
-        └── validation [3277 entries exceeds filelimit, not opening dir]
+        ├── validation [3277 entries exceeds filelimit, not opening dir]
+        └── test [4582 entries exceeds filelimit, not opening dir]
 ```
 
 
