@@ -5,6 +5,9 @@
 
 ![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/7a09d4d1-8dc0-40b1-8a1c-74a6c0e7b9d9)
 
+## Directory Structure
+After completing all the subsequent steps you will end up with a directory structure for OmniCrack
+
 ## Download Dataset(s)
 
 Due to license issues, the dataset can unfortunately not be redistributed as one. Thus, they need to be downloaded from the original sources and prepared according to the following recipes. 
@@ -38,8 +41,9 @@ Link seems to have vanished.
 ### BCL
 Details of the *Bridge Crack Library* (BCL) are provided in \textcite{ye2021structural}. The samples are patches from larger images. The cracks are shown in a macro-like fashion which can account for the visible blur in many samples. 2,036 samples show cracks in *steel*, 5,769 cracks in *concrete* and *stone*, and 3,195 are negatives samples for crack-line artifacts. No information on data splits are provided. Featuring only synthetic cracks BCL 2.0 ([Link](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TUFAJT), accessed Aug 17, 2023) is disregarded.
 
-Download the zip of the dataset from [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RURXSH#) (accessed May 6, 2024).
-Then TODO
+Download the zip of the dataset from [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RURXSH#) (accessed May 6, 2024). Unzipping can cause issues, extracting the subfolders separately might do the trick.
+
+Place the images in the images directory. The labels in the annotations directory.
 
 
 ### Ceramic
