@@ -38,14 +38,13 @@ Due to license issues, the dataset can unfortunately not be redistributed as one
 
 
 ### Khanh11k, S2DS, and UAV75 
-Based on the authors' partial or full involvement in the acquisition and creation process, these datasets can be **directly provided**. A zip file can be downloaded from [Drive](https://drive.google.com/file/d/1GaxNlRU2Wq2T_uVCbNHJFNrPaUQ8FlT3/view?usp=sharing).
-
 <sub>There exists no naming convention for the dataset provided by ([Link](https://github.com/khanhha/crack_segmentation), accessed Aug 16, 2023). Based on the name of the repository owner and the approximate number of samples it will be referred to as **Khanh11k**. Khanh11k is a collection of other datasets including CrackTree200, CFD, CRACK500, DeepCrack, and parts of AEL. Labels were stored in JPG format which potentially accounts for artifacts in some labels. Many images were patched and unisotropicly scaled which led to distortions.
 
 <sub>The **Structural Defects Dataset** (S2DS) was published with \textcite{benz2022image} ([Link](https://github.com/ben-z-original/s2ds)). It contains cracks alongside other classes in the representation required for real-world bridge inspection e.g., by means of UAS. Due to the limited number of images, also the negative samples are kept.
 
 <sub>The **Unmanned Aerial Vehicle** dataset (UAV75) was published with \textcite{benz2019crack} ([Link](https://github.com/ben-z-original/uav75). It represents cracks in a real-world inspection scenario with images captured by a UAS where cracks regularly occur as 1-5px wide structures. The artifacts resulting from weathering and shadow cast on the planking structures form a distractor featured in the 'planking pattern' class.
 
+Based on the authors' partial or full involvement in the acquisition and creation process, these datasets can be **directly provided**. A zip file can be downloaded from [Drive](https://drive.google.com/file/d/1GaxNlRU2Wq2T_uVCbNHJFNrPaUQ8FlT3/view?usp=sharing).
 
 ### AEL
 \footnote{\url{https://www.irit.fr/~Sylvie.Chambon/Crack_Detection_Database.html}, accessed August 16, 2023.}: The dataset AEL -- an acronym of the subsets -- was published by \textcite{amhaz2015automatic}. It consists of the three subsets, AIGLE\textunderscore RN, ESAR, and LCMS. Last of which provides images of low quality. The images are of variable sizes and exclusively show \textit{asphalt} cracks.
@@ -53,11 +52,11 @@ Based on the authors' partial or full involvement in the acquisition and creatio
 Link seems to have vanished.
 
 ### BCL
-Details of the *Bridge Crack Library* (BCL) are provided in \textcite{ye2021structural}. The samples are patches from larger images. The cracks are shown in a macro-like fashion which can account for the visible blur in many samples. 2,036 samples show cracks in *steel*, 5,769 cracks in *concrete* and *stone*, and 3,195 are negatives samples for crack-line artifacts. No information on data splits are provided. Featuring only synthetic cracks BCL 2.0 ([Link](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TUFAJT), accessed Aug 17, 2023) is disregarded.
+<sub>Details of the *Bridge Crack Library* (BCL) are provided in \textcite{ye2021structural}. The samples are patches from larger images. The cracks are shown in a macro-like fashion which can account for the visible blur in many samples. 2,036 samples show cracks in *steel*, 5,769 cracks in *concrete* and *stone*, and 3,195 are negatives samples for crack-line artifacts. No information on data splits are provided. Featuring only synthetic cracks BCL 2.0 ([Link](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TUFAJT), accessed Aug 17, 2023) is disregarded.
 
 Download the zip of the dataset from [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RURXSH#) (accessed May 6, 2024). Unzipping can cause issues, extracting the subfolders separately might do the trick.
 
-Place the images in the images directory. The labels in the annotations directory.
+Create a subdirectory in the ```tmp/images``` folder named ```BCL``` and place the images there. The labels accordingly in the ```tmp/annotations/BCL``` directory.
 
 
 ### Ceramic
