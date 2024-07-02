@@ -7,7 +7,10 @@ July 5, 2024</b>
 </p>
 
 
-## Reference
+## Citation
+[CVPRW Paper](https://openaccess.thecvf.com/content/CVPR2024W/VAND/papers/Benz_OmniCrack30k_A_Benchmark_for_Crack_Segmentation_and_the_Reasonable_Effectiveness_CVPRW_2024_paper.pdf)
+
+If you find our work useful, kindly cite accordingly:
 ```
 @InProceedings{Benz_2024_CVPR,
     author    = {Benz, Christian and Rodehorst, Volker},
