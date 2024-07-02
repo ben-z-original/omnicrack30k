@@ -1,3 +1,6 @@
 [submodule "src/omnicrack30k/datasets/ceramic"]
 	path = src/omnicrack30k/datasets/ceramic
 	url = https://github.com/gerivansantos/ceramic-cracks-dataset.git
+[submodule "src/omnicrack30k/datasets/cfd"]
+	path = src/omnicrack30k/datasets/cfd
+	url = https://github.com/cuilimeng/CrackForest-dataset
