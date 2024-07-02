@@ -19,3 +19,6 @@
 [submodule "src/omnicrack30k/subsets/s2ds"]
 	path = src/omnicrack30k/subsets/s2ds
 	url = https://github.com/ben-z-original/s2ds
+[submodule "src/omnicrack30k/subsets/uav75"]
+	path = src/omnicrack30k/subsets/uav75
+	url = https://github.com/ben-z-original/uav75.git
