@@ -4,3 +4,6 @@
 [submodule "src/omnicrack30k/datasets/cfd"]
 	path = src/omnicrack30k/datasets/cfd
 	url = https://github.com/cuilimeng/CrackForest-dataset
+[submodule "src/omnicrack30k/datasets/crspee"]
+	path = src/omnicrack30k/datasets/crspee
+	url = https://github.com/OSUPCVLab/CrSpEE
