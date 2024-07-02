@@ -7,3 +7,6 @@
 [submodule "src/omnicrack30k/datasets/crspee"]
 	path = src/omnicrack30k/datasets/crspee
 	url = https://github.com/OSUPCVLab/CrSpEE
+[submodule "src/omnicrack30k/datasets/cssc"]
+	path = src/omnicrack30k/datasets/cssc
+	url = https://github.com/CCNYRoboticsLab/concreteIn_inpection_VGGF
