@@ -1,18 +1,18 @@
 [submodule "src/omnicrack30k/datasets/ceramic"]
-	path = src/omnicrack30k/datasets/ceramic
+	path = src/omnicrack30k/subsets/ceramic
 	url = https://github.com/gerivansantos/ceramic-cracks-dataset.git
 [submodule "src/omnicrack30k/datasets/cfd"]
-	path = src/omnicrack30k/datasets/cfd
+	path = src/omnicrack30k/subsets/cfd
 	url = https://github.com/cuilimeng/CrackForest-dataset
 [submodule "src/omnicrack30k/datasets/crspee"]
-	path = src/omnicrack30k/datasets/crspee
+	path = src/omnicrack30k/subsets/crspee
 	url = https://github.com/OSUPCVLab/CrSpEE
 [submodule "src/omnicrack30k/datasets/cssc"]
-	path = src/omnicrack30k/datasets/cssc
+	path = src/omnicrack30k/subsets/cssc
 	url = https://github.com/CCNYRoboticsLab/concreteIn_inpection_VGGF
 [submodule "src/omnicrack30k/datasets/deepcrack"]
-	path = src/omnicrack30k/datasets/deepcrack
+	path = src/omnicrack30k/subsets/deepcrack
 	url = https://github.com/yhlleo/DeepCrack
 [submodule "src/omnicrack30k/datasets/masonry"]
-	path = src/omnicrack30k/datasets/masonry
+	path = src/omnicrack30k/subsets/masonry
 	url = https://github.com/dimitrisdais/crack_detection_CNN_masonry
