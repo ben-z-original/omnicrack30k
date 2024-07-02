@@ -10,3 +10,6 @@
 [submodule "src/omnicrack30k/datasets/cssc"]
 	path = src/omnicrack30k/datasets/cssc
 	url = https://github.com/CCNYRoboticsLab/concreteIn_inpection_VGGF
+[submodule "src/omnicrack30k/datasets/deepcrack"]
+	path = src/omnicrack30k/datasets/deepcrack
+	url = https://github.com/yhlleo/DeepCrack
