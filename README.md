@@ -9,15 +9,15 @@
 After completing all the subsequent downloading steps you will end up with the following directory structure for OmniCrack30k:
 
 ```
-└── omnicrack30k
+└── dataset
     ├── images
-    │   ├── training [22158 entries exceeds filelimit, not opening dir]
-    │   ├── validation [3277 entries exceeds filelimit, not opening dir]
-    │   └── test [4582 entries exceeds filelimit, not opening dir]
+    │   ├── training [22158 entries]
+    │   ├── validation [3277 entries]
+    │   └── test [4582 entries]
     └── annotations
-        ├── training [22158 entries exceeds filelimit, not opening dir]
-        ├── validation [3277 entries exceeds filelimit, not opening dir]
-        └── test [4582 entries exceeds filelimit, not opening dir]
+        ├── training [22158 entries]
+        ├── validation [3277 entries]
+        └── test [4582 entries]
 ```
 
 
