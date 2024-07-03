@@ -31,8 +31,9 @@ class OmniCrack30kModel:
             Path(planpath.parent).mkdir(exist_ok=True)
             gdown.download(url, str(zippath), quiet=False)
 
-        with zipfile.ZipFile(str(zippath), 'r') as zip_ref:
-            zip_ref.extractall(str(planpath))
+        if not Path(planpath).exists():
+            with zipfile.ZipFile(str(zippath), 'r') as zip_ref:
+                zip_ref.extractall(str(planpath))
 
         # initializes the network architecture, loads the checkpoint
         self.predictor.initialize_from_trained_model_folder(
