@@ -27,12 +27,6 @@ If you find our work useful, kindly cite accordingly:
 
 
 
-## Overview
-![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/618579da-8f02-41c8-8a09-657bc18de859)
-
-
-![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/7a09d4d1-8dc0-40b1-8a1c-74a6c0e7b9d9)
-
 ## Run Model
 
 ```
@@ -56,10 +50,15 @@ Run model on single image. If a path to a folder is provided, it runs on the fil
 python -m omnicrack30k.inference assets/UAV75_DSC00573.png
 ```
 
+## Dataset(s)
+
+### Overview
+![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/618579da-8f02-41c8-8a09-657bc18de859)
 
 
-## Download Dataset(s)
+![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/7a09d4d1-8dc0-40b1-8a1c-74a6c0e7b9d9)
 
+### Download
 
 <p align="center">
 <b>Recipes for downloading and preparing the dataset as well as the nnU-Net benchmarking model will be published on <br><br>
