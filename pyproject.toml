@@ -1,0 +1,36 @@
+[project]
+name = "omnicrack30k"
+version = "1.0.0"
+requires-python = ">=3.9"
+description = "Dataset and model for structural crack segmentation."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Christian Benz", email = "christian.benz@uni-weimar.de"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "Topic :: Scientific/Engineering :: Structural Health Monitoring",
+]
+keywords = [
+    'deep learning',
+    'image segmentation',
+    'semantic segmentation',
+    'crack segmentation',
+    'crack detection',
+]
+
+dynamic = ["dependencies"]
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project.urls]
+repository = "https://github.com/ben-z-original/omnicrack30k"
+
+
