@@ -1,5 +1,7 @@
 import cv2
 import torch
+import gdown
+import zipfile
 import numpy as np
 import gradio as gr
 from pathlib import Path
@@ -9,8 +11,7 @@ from nnunetv2.inference.predict_from_raw_data import nnUNetPredictor
 
 
 class OmniCrack30kModel:
-    def __init__(self,
-                 planpath="/media/chrisbe/backup/nnUNet/nnUNet_trained_models/Dataset701_crackseg/nnUNetTrainer__nnUNetPlans__2d"):
+    def __init__(self, planpath=Path(__file__).parent / "checkpoints" / "nnUNetTrainer__nnUNetPlans__2d"):
         # instantiate the nnUNetPredictor
         self.predictor = nnUNetPredictor(
             tile_step_size=0.5,
@@ -22,9 +23,20 @@ class OmniCrack30kModel:
             verbose_preprocessing=False,
             allow_tqdm=True
         )
+
+        if not Path(planpath).exists():
+            url = "https://drive.google.com/uc?id=1X1NFs4mKPJDBxZZRbiymf6cs_tni1jKg"
+            zippath = Path(planpath).with_suffix(".zip")
+            gdown.download(url, str(zippath), quiet=False)
+
+            with zipfile.ZipFile(str(zippath), 'r') as zip_ref:
+                zip_ref.extractall(str(planpath))
+
+            # https://drive.google.com/file/d/1X1NFs4mKPJDBxZZRbiymf6cs_tni1jKg/view?usp=drive_link
+
         # initializes the network architecture, loads the checkpoint
         self.predictor.initialize_from_trained_model_folder(
-            planpath,
+            str(planpath),
             use_folds=(0,),
             checkpoint_name='checkpoint_final.pth',
         )
@@ -86,9 +98,9 @@ if __name__ == "__main__":
                             description="""
                             Official model trained on the OmniCrack30k crack segmentation dataset. 
                             For details kindly refer to https://github.com/ben-z-original/omnicrack30k 
-                            and the corresponding [paper](https://openaccess.thecvf.com/content/CVPR2024W/VAND/papers/Benz_OmniCrack30k_A_Benchmark_for_Crack_Segmentation_and_the_Reasonable_Effectiveness_CVPRW_2024_paper.pdf).
+                            and the corresponding [publication](https://openaccess.thecvf.com/content/CVPR2024W/VAND/papers/Benz_OmniCrack30k_A_Benchmark_for_Crack_Segmentation_and_the_Reasonable_Effectiveness_CVPRW_2024_paper.pdf).
                             To limit runtime and computation resources, this demo runs on a single fold 
-                            (not the ensemble), which reduces performance only slightly.
+                            (not the ensemble), which slightly reduces performance.
                             """,
                             inputs=gr.Image(label="Input Image"),
                             outputs=[gr.Image(label="Softmax"),
@@ -99,6 +111,7 @@ if __name__ == "__main__":
         if args.no_vis:
             # needed because nnunet uses non-gui backend
             import matplotlib
+
             matplotlib.use("TkAgg")
             from matplotlib import pyplot as plt
 
