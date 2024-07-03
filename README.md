@@ -65,3 +65,253 @@ python -m omnicrack30k.inference assets/UAV75_DSC00573.png
 <b>Recipes for downloading and preparing the dataset as well as the nnU-Net benchmarking model will be published on <br><br>
 July 5, 2024</b>
 </p>
+
+## References
+Don't forget to give credit to partly excellent work done by the following authors in terms of creation and provision of crack segmentation datasets:
+
+####  AEL
+```
+@article{amhaz2015automatic,
+	title={Automatic crack detection on 2d pavement images: An algorithm based on minimal path selection, accepted to ieee trans},
+	author={Amhaz, R and Chambon, S and Idier, J and Baltazart, V},
+	journal={Intell. Transp. Syst},
+	year={2015}
+}
+```
+#### BCL
+[Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TUFAJT)
+```
+@article{ye2021structural,
+	title={Structural crack detection from benchmark data sets using pruned fully convolutional networks},
+	author={Ye, Xiao-Wei and Jin, T and Li, ZX and Ma, SY and Ding, Y and Ou, YH},
+	journal={Journal of Structural Engineering},
+	volume={147},
+	number={11},
+	pages={04721008},
+	year={2021},
+	publisher={American Society of Civil Engineers}
+}
+```
+#### Ceramic
+[Github](https://github.com/gerivansantos/ceramic-cracks-dataset.git)
+```
+@article{junior2021ceramic,
+	title={Ceramic cracks segmentation with deep learning},
+	author={Junior, Gerivan Santos and Ferreira, Janderson and Mill{\'a}n-Arias, Cristian and Daniel, Ramiro and Junior, Alberto Casado and Fernandes, Bruno JT},
+	journal={Applied Sciences},
+	volume={11},
+	number={13},
+	pages={6017},
+	year={2021},
+	publisher={MDPI}
+}
+```
+#### CFD
+[Github](https://github.com/cuilimeng/CrackForest-dataset)
+```
+@article{shi2016automatic,
+	title={Automatic road crack detection using random structured forests},
+	author={Shi, Yong and Cui, Limeng and Qi, Zhiquan and Meng, Fan and Chen, Zhensong},
+	journal={IEEE Transactions on Intelligent Transportation Systems},
+	volume={17},
+	number={12},
+	pages={3434--3445},
+	year={2016},
+	publisher={IEEE}
+}
+```
+#### CRACK500
+[Github](https://github.com/fyangneil/pavement-crack-detection)
+```
+@inproceedings{zhang2016road, 
+	title={Road crack detection using deep convolutional neural network}, 
+	author={Zhang, Lei and Yang, Fan and Zhang, Yimin Daniel and Zhu, Ying Julie}, 
+	booktitle={Image Processing (ICIP), 2016 IEEE International Conference on}, 
+	pages={3708--3712}, 
+	year={2016}, 
+	organization={IEEE} 
+}
+@article{yang2019feature,
+	title={Feature pyramid and hierarchical boosting network for pavement crack detection},
+	author={Yang, Fan and Zhang, Lei and Yu, Sijia and Prokhorov, Danil and Mei, Xue and Ling, Haibin},
+	journal={IEEE Transactions on Intelligent Transportation Systems},
+	volume={21},
+	number={4},
+	pages={1525--1535},
+	year={2019},
+	publisher={IEEE}
+}
+```
+#### CrackLS315, CrackTree260, CRKWH100, and Stone331
+[Github](https://github.com/qinnzou/DeepCrack)
+```
+@article{zou2018deepcrack,
+	title={Deepcrack: Learning hierarchical convolutional features for crack detection},
+	author={Zou, Qin and Zhang, Zheng and Li, Qingquan and Qi, Xianbiao and Wang, Qian and Wang, Song},
+	journal={IEEE Transactions on Image Processing},
+	volume={28},
+	number={3},
+	pages={1498--1512},
+	year={2018},
+	publisher={IEEE}
+}
+@article{zou2012cracktree,
+	title={CrackTree: Automatic crack detection from pavement images},
+	author={Zou, Qin and Cao, Yu and Li, Qingquan and Mao, Qingzhou and Wang, Song},
+	journal={Pattern Recognition Letters},
+	volume={33},
+	number={3},
+	pages={227--238},
+	year={2012},
+	publisher={Elsevier}
+}
+```
+#### CrSpEE
+[Github](https://github.com/OSUPCVLab/CrSpEE)
+```
+@article{bai2021detecting,
+	title={Detecting cracks and spalling automatically in extreme events by end-to-end deep learning frameworks},
+	author={Bai, Yongsheng and Sezen, Halil and Yilmaz, Alper},
+	journal={ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences},
+	volume={2},
+	pages={161--168},
+	year={2021},
+	publisher={Copernicus GmbH}
+}
+```
+#### CSSC
+[Github](https://github.com/CCNYRoboticsLab/concreteIn_inpection_VGGF)
+```
+@inproceedings{yang2017deep,
+	title={Deep concrete inspection using unmanned aerial vehicle towards cssc database},
+	author={Yang, Liang and Li, Bing and Li, Wei and Liu, Zhaoming and Yang, Guoyong and Xiao, Jizhong},
+	booktitle={Proceedings of the IEEE/RSJ international conference on intelligent robots and systems},
+	pages={24--28},
+	year={2017}
+}
+```
+#### DeepCrack
+[Github](https://github.com/yhlleo/DeepCrack)
+```
+@article{liu2019deepcrack,
+	title={DeepCrack: A deep hierarchical feature learning architecture for crack segmentation},
+	author={Liu, Yahui and Yao, Jian and Lu, Xiaohu and Xie, Renping and Li, Li},
+	journal={Neurocomputing},
+	volume={338},
+	pages={139--153},
+	year={2019},
+	publisher={Elsevier}
+}
+
+```
+#### DIC
+[Zenodo](https://zenodo.org/record/4307686)
+```
+@article{rezaie2020comparison,
+	title={Comparison of crack segmentation using digital image correlation measurements and deep learning},
+	author={Rezaie, Amir and Achanta, Radhakrishna and Godio, Michele and Beyer, Katrin},
+	journal={Construction and Building Materials},
+	volume={261},
+	pages={120474},
+	year={2020},
+	publisher={Elsevier}
+}
+```
+#### GAPS384
+[TU Ilmenau](https://www.tu-ilmenau.de/universitaet/fakultaeten/fakultaet-informatik-und-automatisierung/profil/institute-und-fachgebiete/institut-fuer-technische-informatik-und-ingenieurinformatik/fachgebiet-neuroinformatik-und-kognitive-robotik/data-sets-code/german-asphalt-pavement-distress-dataset-gaps)
+[Github](https://github.com/fyangneil/pavement-crack-detection)
+```
+@inproceedings{eisenbach2017get,
+	title={How to get pavement distress detection ready for deep learning? A systematic approach},
+	author={Eisenbach, Markus and Stricker, Ronny and Seichter, Daniel and Amende, Karl and Debes, Klaus and Sesselmann, Maximilian and Ebersbach, Dirk and Stoeckert, Ulrike and Gross, Horst-Michael},
+	booktitle={2017 international joint conference on neural networks (IJCNN)},
+	pages={2039--2047},
+	year={2017},
+	organization={IEEE}
+}
+@inproceedings{stricker2019improving,
+	title={Improving visual road condition assessment by extensive experiments on the extended gaps dataset},
+	author={Stricker, Ronny and Eisenbach, Markus and Sesselmann, Maximilian and Debes, Klaus and Gross, Horst-Michael},
+	booktitle={2019 International Joint Conference on Neural Networks (IJCNN)},
+	pages={1--8},
+	year={2019},
+	organization={IEEE}
+}
+@article{yang2019feature,
+	title={Feature pyramid and hierarchical boosting network for pavement crack detection},
+	author={Yang, Fan and Zhang, Lei and Yu, Sijia and Prokhorov, Danil and Mei, Xue and Ling, Haibin},
+	journal={IEEE Transactions on Intelligent Transportation Systems},
+	volume={21},
+	number={4},
+	pages={1525--1535},
+	year={2019},
+	publisher={IEEE}
+}
+```
+#### Khanh11k
+[Github](https://github.com/khanhha/crack_segmentation)
+
+#### LCW
+[Virginia Tech](https://data.lib.vt.edu/articles/dataset/Labeled_Cracks_in_the_Wild_LCW_Dataset/16624672)
+```
+@article{bianchi2022development,
+	title={Development of Extendable Open-Source Structural Inspection Datasets},
+	author={Bianchi, Eric and Hebdon, Matthew},
+	journal={Journal of Computing in Civil Engineering},
+	volume={36},
+	number={6},
+	pages={04022039},
+	year={2022},
+	publisher={American Society of Civil Engineers}
+}
+```
+#### Masonry
+[Github](https://github.com/dimitrisdais/crack_detection_CNN_masonry)
+```
+@article{dais2021automatic,
+	title={Automatic crack classification and segmentation on masonry surfaces using convolutional neural networks and transfer learning},
+	author={Dais, Dimitris and Bal, Ihsan Engin and Smyrou, Eleni and Sarhosis, Vasilis},
+	journal={Automation in Construction},
+	volume={125},
+	pages={103606},
+	year={2021},
+	publisher={Elsevier}
+}
+```
+#### S2DS
+[Github](https://github.com/ben-z-original/s2ds)
+```
+@inproceedings{benz2022image,
+	title={Image-Based Detection of Structural Defects Using Hierarchical Multi-scale Attention},
+	author={Benz, Christian and Rodehorst, Volker},
+	booktitle={DAGM German Conference on Pattern Recognition},
+	pages={337--353},
+	year={2022},
+	organization={Springer}
+}
+```
+#### TopoDS
+[Github](https://zenodo.org/record/6651663) 
+```
+@article{pantoja2022topo,
+	title={TOPO-Loss for continuity-preserving crack detection using deep learning},
+	author={Pantoja-Rosero, Bryan G and Oner, D and Kozinski, Mateusz and Achanta, Radhakrishna and Fua, Pascal and P{\'e}rez-Cruz, Fernando and Beyer, K},
+	journal={Construction and Building Materials},
+	volume={344},
+	pages={128264},
+	year={2022},
+	publisher={Elsevier}
+}
+```
+#### UAV75
+[Github](https://github.com/ben-z-original/uav75)
+```
+@inproceedings{benz2019crack,
+	title={Crack segmentation on UAS-based imagery using transfer learning},
+	author={Benz, Christian and Debus, Paul and Ha, Huy Khanh and Rodehorst, Volker},
+	booktitle={2019 International Conference on Image and Vision Computing New Zealand (IVCNZ)},
+	pages={1--6},
+	year={2019},
+	organization={IEEE}
+}
+```
