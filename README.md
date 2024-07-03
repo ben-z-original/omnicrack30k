@@ -51,7 +51,7 @@ The following command starts a local gradio app, which can be opened in the web 
 python -m omnicrack30k.inference
 ```
 ### Single Image
-If you provide a path to a folder it also runs on the files in the folder.
+Run model on single image. If a path to a folder is provided, it runs on the files in the folder.
 ```
 python -m omnicrack30k.inference assets/UAV75_DSC00573.png
 ```
