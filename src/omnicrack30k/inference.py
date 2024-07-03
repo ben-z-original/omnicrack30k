@@ -27,6 +27,7 @@ class OmniCrack30kModel:
         if not Path(planpath).exists():
             url = "https://drive.google.com/uc?id=1X1NFs4mKPJDBxZZRbiymf6cs_tni1jKg"
             zippath = Path(planpath).with_suffix(".zip")
+            Path(planpath).mkdir(exist_ok=True)
             gdown.download(url, str(zippath), quiet=False)
 
             with zipfile.ZipFile(str(zippath), 'r') as zip_ref:
