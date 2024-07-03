@@ -83,9 +83,9 @@ class OmniCrack30kModel:
         return data
 
 
-if __name__ == "__main__":
+def main():
     parser = ArgumentParser(description="""Start a local gradio app for crack segmentation
-                                        or run on segmentation on provided filepath(s).""")
+                                            or run on segmentation on provided filepath(s).""")
     parser.add_argument('-p', '--path', default=None, help="Path to image or folder to be processes")
     parser.add_argument('-nv', '--no_vis', action="store_false", help="Turn off visualization for image")
     args = parser.parse_args()
@@ -96,12 +96,12 @@ if __name__ == "__main__":
         demo = gr.Interface(fn=predictor,
                             title="OmniCrack30k Crack Segmentation",
                             description="""
-                            Official model trained on the OmniCrack30k crack segmentation dataset. 
-                            For details kindly refer to https://github.com/ben-z-original/omnicrack30k 
-                            and the corresponding [publication](https://openaccess.thecvf.com/content/CVPR2024W/VAND/papers/Benz_OmniCrack30k_A_Benchmark_for_Crack_Segmentation_and_the_Reasonable_Effectiveness_CVPRW_2024_paper.pdf).
-                            To limit runtime and computation resources, this demo runs on a single fold 
-                            (not the ensemble), which slightly reduces performance.
-                            """,
+                                Official model trained on the OmniCrack30k crack segmentation dataset. 
+                                For details kindly refer to https://github.com/ben-z-original/omnicrack30k 
+                                and the corresponding [publication](https://openaccess.thecvf.com/content/CVPR2024W/VAND/papers/Benz_OmniCrack30k_A_Benchmark_for_Crack_Segmentation_and_the_Reasonable_Effectiveness_CVPRW_2024_paper.pdf).
+                                To limit runtime and computation resources, this demo runs on a single fold 
+                                (not the ensemble), which slightly reduces performance.
+                                """,
                             inputs=gr.Image(label="Input Image"),
                             outputs=[gr.Image(label="Softmax"),
                                      gr.Image(label="Argmax"),
@@ -121,3 +121,7 @@ if __name__ == "__main__":
         for p in paths:
             img = cv2.imread(str(p), cv2.IMREAD_COLOR)
             predictor(img, vis=args.no_vis)
+
+
+if __name__ == "__main__":
+    main()
