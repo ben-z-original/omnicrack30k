@@ -66,7 +66,7 @@ July 5, 2024</b>
 </p>
 
 ## References
-Don't forget to give credit to partly excellent work done by the following authors in terms of creation and provision of crack segmentation datasets:
+Don't forget to give credit to the partly excellent work done by the following authors in terms of creation and provision of crack segmentation datasets:
 
 ####  AEL
 ```
