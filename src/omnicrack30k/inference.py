@@ -63,14 +63,24 @@ class OmniCrack30kModel:
         centerlines = 255 - centerlines
 
         if vis:
+            # needed because nnunet uses non-gui backend
+            import matplotlib
+            matplotlib.use("TkAgg")
+            from matplotlib import pyplot as plt
+
             plt.subplot(221)
             plt.imshow(data_orig)
+            plt.title("Input Image")
             plt.subplot(222)
             plt.imshow(softmax[1], 'gray')
+            plt.title("Softmax")
             plt.subplot(223)
             plt.imshow(argmax, 'gray')
+            plt.title("Argmax")
             plt.subplot(224)
             plt.imshow(centerlines, 'gray')
+            plt.title("Centerlines")
+            plt.tight_layout()
             plt.show()
 
         return softmax[1], argmax, centerlines
@@ -87,7 +97,7 @@ class OmniCrack30kModel:
 def main():
     parser = ArgumentParser(description="""Start a local gradio app for crack segmentation
                                             or run on segmentation on provided filepath(s).""")
-    parser.add_argument('-p', '--path', default=None, help="Path to image or folder to be processes")
+    parser.add_argument('path', nargs='?', default=None, help="Path to image or folder to be processes")
     parser.add_argument('-nv', '--no_vis', action="store_false", help="Turn off visualization for image")
     args = parser.parse_args()
 
@@ -109,13 +119,6 @@ def main():
                                      gr.Image(label="Centerlines")])
         demo.launch()
     else:
-        if args.no_vis:
-            # needed because nnunet uses non-gui backend
-            import matplotlib
-
-            matplotlib.use("TkAgg")
-            from matplotlib import pyplot as plt
-
         path = Path(args.path)
 
         paths = [path] if path.is_file() else sorted(path.glob("*"))
