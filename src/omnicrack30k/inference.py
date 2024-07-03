@@ -24,16 +24,15 @@ class OmniCrack30kModel:
             allow_tqdm=True
         )
 
-        if not Path(planpath).exists():
+        # doẃnload and unzip plan
+        zippath = Path(planpath).with_suffix(".zip")
+        if not zippath.exists():
             url = "https://drive.google.com/uc?id=1X1NFs4mKPJDBxZZRbiymf6cs_tni1jKg"
-            zippath = Path(planpath).with_suffix(".zip")
             Path(planpath.parent).mkdir(exist_ok=True)
             gdown.download(url, str(zippath), quiet=False)
 
-            with zipfile.ZipFile(str(zippath), 'r') as zip_ref:
-                zip_ref.extractall(str(planpath))
-
-            # https://drive.google.com/file/d/1X1NFs4mKPJDBxZZRbiymf6cs_tni1jKg/view?usp=drive_link
+        with zipfile.ZipFile(str(zippath), 'r') as zip_ref:
+            zip_ref.extractall(str(planpath))
 
         # initializes the network architecture, loads the checkpoint
         self.predictor.initialize_from_trained_model_folder(
