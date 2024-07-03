@@ -18,7 +18,7 @@ class OmniCrack30kModel:
             use_gaussian=True,
             use_mirroring=True,
             perform_everything_on_device=True,
-            device=torch.device('cuda', 0),
+            device=torch.device('cuda', 0) if torch.cuda.is_available() else torch.device('cpu'),
             verbose=False,
             verbose_preprocessing=False,
             allow_tqdm=True
@@ -48,7 +48,7 @@ class OmniCrack30kModel:
         # preprocess image
         data_orig = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) if rgb else img
         data = (data_orig - data_orig.mean((0, 1))) / data_orig.std((0, 1))
-        data = torch.tensor(data, dtype=torch.half)
+        data = torch.tensor(data, dtype=torch.float32)
         data = data.moveaxis(-1, 0).unsqueeze(1)
 
         # run segmentation
