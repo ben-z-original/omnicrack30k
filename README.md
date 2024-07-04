@@ -180,6 +180,14 @@ Don't forget to give credit to the partly excellent work done by the following a
 ```
 #### CSSC
 [Github](https://github.com/CCNYRoboticsLab/concreteIn_inpection_VGGF)
+
+Full resolution data (shared with the consent of the authors; mind original repository available via the link above):<br>
+[Crack Data (full res)](https://www.dropbox.com/s/sak67svf9fbvepi/partialCrackDataSet.rar?dl=0)<br>
+[Spalling Data (full res)](https://www.dropbox.com/s/wenjq3hguli41bg/spallingDataset.rar?dl=0)
+
+Import note from the authors: <br>
+Please remember that this data set is research only (${{\color{red}\textsf{US law required, you take your own risk on this}}}\$), not for commercial use. 
+
 ```
 @inproceedings{yang2017deep,
 	title={Deep concrete inspection using unmanned aerial vehicle towards cssc database},
