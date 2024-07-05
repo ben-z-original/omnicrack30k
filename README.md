@@ -59,11 +59,19 @@ python -m omnicrack30k.inference assets/UAV75_DSC00573.png
 ![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/7a09d4d1-8dc0-40b1-8a1c-74a6c0e7b9d9)
 
 ### Download
+Due to license issues, the dataset cannot openly be shared. If you need access for research purposes to replicate our results, etc., kindly send a request mail from your university/education account to christian.benz@uni-weimar.de with the following content, which you thereby acknowledge:
 
-<p align="center">
-<b>Recipes for downloading and preparing the dataset as well as the nnU-Net benchmarking model will be published on <br><br>
-July 5, 2024</b>
-</p>
+```Subject: Access OmniCrack30k Dataset```
+
+```
+Kindly grant me access to the OmniCrack30k dataset.
+
+I hereby confirm, that I comply with all licenses involved, especially the ones related to the data subsets.
+I will use the dataset for non-commercial purposes only.
+
+Kind regards,
+[Full name, job role, institution, link to personal university/research website]
+```
 
 ## References
 Don't forget to give credit to the partly excellent work done by the following authors in terms of creation and provision of crack segmentation datasets:
