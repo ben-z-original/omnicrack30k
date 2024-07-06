@@ -49,6 +49,11 @@ Run model on single image. If a path to a folder is provided, it runs on the fil
 ```
 python -m omnicrack30k.inference assets/UAV75_DSC00573.png
 ```
+### Evaluation
+To compute the centerline IoU (clIoU) with tolerance 4px, e.g., on the ```test set``` for the ```Ceramic``` subset, run:
+```
+python -m omnicrack30k.evaluation path_to_omnicrack30k_rootdir test --subset Ceramic
+```
 
 ## Dataset(s)
 
