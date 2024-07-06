@@ -28,8 +28,8 @@ def apply_tolerance(true, pred, tol=5):
     return true, pred
 
 
-def run_evaluation(datapath, split, subset="", tolerance=4):
-    predictor = OmniCrack30kModel(folds=(0, 1, 2, 3, 4))
+def run_evaluation(datapath, split, subset="", tolerance=4, planpath=None):
+    predictor = OmniCrack30kModel(planpath=planpath, folds=(0, 1, 2, 3, 4))
 
     img_paths = (datapath / "images" / split).glob(f"{subset}*.png")
 
@@ -76,6 +76,7 @@ if __name__ == "__main__":
     parser.add_argument('split', nargs='?', choices=['test', 'validation'], help="Split for evaluation")
     parser.add_argument('-s', '--subset', type=str, default="", help="Subset to evaluate.")
     parser.add_argument('-t', '--tolerance', type=int, default=4, help="Tolerance of the clIoU.")
+    parser.add_argument('-p', '--planpath', type=str, default=None, help="Path to the plan, i.e. model and weights.")
     args = parser.parse_args()
 
-    run_evaluation(Path(args.datapath), args.split, args.subset, args.tolerance)
+    run_evaluation(Path(args.datapath), args.split, args.subset, args.tolerance, args.planpath)
