@@ -11,7 +11,8 @@ from nnunetv2.inference.predict_from_raw_data import nnUNetPredictor
 
 
 class OmniCrack30kModel:
-    def __init__(self, planpath=Path(__file__).parent / "checkpoints" / "nnUNetTrainer__nnUNetPlans__2d"):
+    def __init__(self, planpath=Path(__file__).parent / "checkpoints" / "nnUNetTrainer__nnUNetPlans__2d",
+                 folds=(0,)):
         # instantiate the nnUNetPredictor
         self.predictor = nnUNetPredictor(
             tile_step_size=0.5,
@@ -21,12 +22,12 @@ class OmniCrack30kModel:
             device=torch.device('cuda', 0) if torch.cuda.is_available() else torch.device('cpu'),
             verbose=False,
             verbose_preprocessing=False,
-            allow_tqdm=True
+            allow_tqdm=True,
         )
 
         # doẃnload and unzip plan
         zippath = Path(planpath).with_suffix(".zip")
-        if not zippath.exists():
+        if not zippath.exists() and not Path(planpath).exists():
             url = "https://drive.google.com/uc?id=15S1dvjr7050kISlQ0JTiEPA1eeUDfoOl"
             Path(planpath.parent).mkdir(exist_ok=True)
             gdown.download(url, str(zippath), quiet=False)
@@ -38,7 +39,7 @@ class OmniCrack30kModel:
         # initializes the network architecture, loads the checkpoint
         self.predictor.initialize_from_trained_model_folder(
             str(planpath),
-            use_folds=(0,),
+            use_folds=folds,
             checkpoint_name='checkpoint_final.pth',
         )
 
