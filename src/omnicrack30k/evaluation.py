@@ -65,8 +65,9 @@ def run_evaluation(datapath, split, subset="", tolerance=4):
 
     for key in SUBSETS[split]:
         # compute centerline IoU (clIoU)
-        cliou = jaccard_score(trues[key], preds[key])
-        print(f"{key}\t{cliou:.3f}")
+        if 0 < len(trues[key]):
+            cliou = jaccard_score(trues[key], preds[key])
+            print(f"{key}\t{cliou:.3f}")
 
 
 if __name__ == "__main__":
