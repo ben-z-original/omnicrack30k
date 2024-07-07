@@ -194,7 +194,7 @@ Don't forget to give credit to the partly excellent work done by the following a
 #### CSSC
 [Github](https://github.com/CCNYRoboticsLab/concreteIn_inpection_VGGF)
 
-Full resolution data (shared with the consent of the authors; mind original repository available via the link above):<br>
+Full resolution data (shared with the consent of the authors; mind the original repository available via the link above):<br>
 [Crack Data (full res)](https://www.dropbox.com/s/sak67svf9fbvepi/partialCrackDataSet.rar?dl=0)<br>
 [Spalling Data (full res)](https://www.dropbox.com/s/wenjq3hguli41bg/spallingDataset.rar?dl=0)
 
