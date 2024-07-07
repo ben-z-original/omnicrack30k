@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from tqdm import tqdm
 from pathlib import Path
 from argparse import ArgumentParser
 from skimage.morphology import disk
@@ -28,55 +29,64 @@ def apply_tolerance(true, pred, tol=5):
     return true, pred
 
 
-def run_evaluation(datapath, split, subset="", tolerance=4, planpath=None):
-    predictor = OmniCrack30kModel(planpath=planpath, folds=(0, 1, 2, 3, 4))
+def run_evaluation(datapath, split, subset=None, tolerance=4, planpath=None, folds=(0, 1, 2, 3, 4), texpath=None):
+    predictor = OmniCrack30kModel(planpath=planpath, folds=folds, allow_tqdm=False)
 
-    img_paths = (datapath / "images" / split).glob(f"{subset}*.png")
+    subsets = [subset] if subset is not None else SUBSETS[split]
 
-    trues = {key: np.empty((0,), dtype=bool) for key in SUBSETS[split]}
-    preds = {key: np.empty((0,), dtype=bool) for key in SUBSETS[split]}
+    trues = {key: np.empty((0,), dtype=bool) for key in subsets}
+    preds = {key: np.empty((0,), dtype=bool) for key in subsets}
 
-    for f in img_paths:
-        subset = f.stem.split("_")[0]
+    tex = ""
 
-        # load image and annotation
-        img = cv2.imread(str(f), cv2.IMREAD_COLOR)
-        true = cv2.imread(str((datapath / "centerlines" / split / f.name)), cv2.IMREAD_GRAYSCALE)
+    for key in subsets:
+        img_paths = (datapath / "images" / split).glob(f"{key}*.png")
 
-        # run inference and map classes
-        softmax, argmax, centerlines = predictor(img)
-        true, pred = np.uint8(true == 0), np.uint8(centerlines == 0)
+        for f in tqdm(list(img_paths)):
+            # load image and annotation
+            img = cv2.imread(str(f), cv2.IMREAD_COLOR)
+            true = cv2.imread(str((datapath / "centerlines" / split / f.name)), cv2.IMREAD_GRAYSCALE)
 
-        # some subsets (e.g. Stone331) provide resized masks -> correct that
-        if pred.shape != true.shape:
-            pred = cv2.resize(pred, (true.shape[1], true.shape[0]), interpolation=cv2.INTER_NEAREST)
+            # run inference and map classes
+            softmax, argmax, centerlines = predictor(img)
+            true, pred = np.uint8(true == 0), np.uint8(centerlines == 0)
 
-        # apply tolerance
-        true, pred = apply_tolerance(true, pred, tol=tolerance)
-        true, pred = true.flatten(), pred.flatten()
+            # some subsets (e.g. Stone331) provide resized masks -> correct that
+            if pred.shape != true.shape:
+                pred = cv2.resize(pred, (true.shape[1], true.shape[0]), interpolation=cv2.INTER_NEAREST)
 
-        # remove true negatives (they do not affect IoU)
-        keep_idxs = np.where((true == 1) + (pred == 1))[0]
-        true, pred = true[keep_idxs], pred[keep_idxs]
+            # apply tolerance
+            true, pred = apply_tolerance(true, pred, tol=tolerance)
+            true, pred = true.flatten(), pred.flatten()
 
-        # store results
-        trues[subset] = np.append(trues[subset], true)
-        preds[subset] = np.append(preds[subset], pred)
+            # remove true negatives (they do not affect IoU)
+            keep_idxs = np.where((true == 1) + (pred == 1))[0]
+            true, pred = true[keep_idxs], pred[keep_idxs]
 
-    for key in SUBSETS[split]:
+            # store results
+            trues[key] = np.append(trues[key], true)
+            preds[key] = np.append(preds[key], pred)
+
         # compute centerline IoU (clIoU)
-        if 0 < len(trues[key]):
-            cliou = jaccard_score(trues[key], preds[key])
-            print(f"{key}\t{cliou:.3f}")
+        cliou = jaccard_score(trues[key], preds[key])
+        tex += f"& {100 * cliou:.1f} "
+        print(f"\n{key}\t{cliou:.3f}")
+
+    if texpath is not None:
+        with open(texpath, 'w') as f:
+            f.write(tex)
 
 
 if __name__ == "__main__":
     parser = ArgumentParser(description="""Run evaluation and compute centerline IoU (clIoU).""")
     parser.add_argument('datapath', nargs='?', help="Path to root folder of omnicrack30k dataset.")
     parser.add_argument('split', nargs='?', choices=['test', 'validation'], help="Split for evaluation")
-    parser.add_argument('-s', '--subset', type=str, default="", help="Subset to evaluate.")
+    parser.add_argument('-s', '--subset', type=str, default=None, help="Subset to evaluate.")
     parser.add_argument('-t', '--tolerance', type=int, default=4, help="Tolerance of the clIoU.")
     parser.add_argument('-p', '--planpath', type=str, default=None, help="Path to the plan, i.e. model and weights.")
+    parser.add_argument('-f', '--folds', nargs="+", type=int, default=(0, 1, 2, 3, 4), help="Folds for ensemble.")
+    parser.add_argument('-tp', '--texpath', type=str, default=None, help="Path to latex output file, if desired.")
     args = parser.parse_args()
 
-    run_evaluation(Path(args.datapath), args.split, args.subset, args.tolerance, args.planpath)
+    run_evaluation(Path(args.datapath), args.split, args.subset, args.tolerance, args.planpath, args.folds,
+                   args.texpath)

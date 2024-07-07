@@ -11,7 +11,7 @@ from nnunetv2.inference.predict_from_raw_data import nnUNetPredictor
 
 
 class OmniCrack30kModel:
-    def __init__(self, planpath=None, folds=(0,)):
+    def __init__(self, planpath=None, folds=(0,), allow_tqdm=True):
         # instantiate the nnUNetPredictor
         self.predictor = nnUNetPredictor(
             tile_step_size=0.5,
@@ -21,7 +21,7 @@ class OmniCrack30kModel:
             device=torch.device('cuda', 0) if torch.cuda.is_available() else torch.device('cpu'),
             verbose=False,
             verbose_preprocessing=False,
-            allow_tqdm=True,
+            allow_tqdm=allow_tqdm,
         )
 
         if planpath is None:
