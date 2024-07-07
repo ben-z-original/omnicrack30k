@@ -31,7 +31,7 @@ If you find our work useful, kindly cite accordingly:
 
 ```
 git clone https://github.com/ben-z-original/omnicrack30k
-conda create -name py310 python=3.10
+conda create --name py310 python=3.10
 conda activate py310
 cd omnicrack30k
 pip install -e .
