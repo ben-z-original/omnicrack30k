@@ -45,7 +45,9 @@ class OmniCrack30kModel:
             checkpoint_name='checkpoint_final.pth',
         )
 
+        self.predictor.network.eval()
         self.preprocessor = self.predictor.configuration_manager.preprocessor_class()
+
 
     def __call__(self, img, vis=False, rgb=False):
         # preprocess image
