@@ -93,9 +93,9 @@ class OmniCrack30kModel:
     def nnunet_preprocessing(self, imgpath):
         data, _, _ = self.preprocessor.run_case([imgpath],
                                                 None,
-                                                predictor.plans_manager,
-                                                predictor.configuration_manager,
-                                                predictor.dataset_json)
+                                                self.predictor.plans_manager,
+                                                self.predictor.configuration_manager,
+                                                self.predictor.dataset_json)
         return data
 
 
