@@ -1,4 +1,4 @@
-torch==2.1.2
+torch==2.0.1
 nnunetv2 @ git+https://github.com/MIC-DKFZ/nnUNet.git@v2.4.2
 gdown==5.2.0
 opencv-python==4.9.0.80
