@@ -19,6 +19,7 @@ If you find our work useful, kindly cite accordingly:
 
 ## Run Model
 ### Installation
+#### ... cloning the repository
 ```
 # create and activate conda environment
 conda create --name omnicrack30k python=3.10
@@ -29,7 +30,15 @@ git clone https://github.com/ben-z-original/omnicrack30k
 cd omnicrack30k
 pip install -e .
 ```
-The plan, i.e. the trained parameters, will be automatically downloaded when one of the commands below is run, but can also be accessed via:
+
+#### ... without cloning the repository
+```
+conda create --name omnicrack30k python=3.10
+conda activate omnicrack30k
+pip install git+https://github.com/ben-z-original/omnicrack30k.git
+```
+
+The plan, i.e., the trained parameters, will be automatically downloaded when one of the commands below is run, but can also be accessed via:
 [Google Drive Link](https://drive.google.com/file/d/15S1dvjr7050kISlQ0JTiEPA1eeUDfoOl/view?usp=drive_link)
 
 ### Start Local Gradio App
