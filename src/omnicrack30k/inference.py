@@ -47,7 +47,9 @@ class OmniCrack30kModel:
 
         self.predictor.network.eval()
         self.preprocessor = self.predictor.configuration_manager.preprocessor_class()
-
+        
+        self.classes = ["background", "crack"]
+    
 
     def __call__(self, img, vis=False, rgb=False):
         # preprocess image
