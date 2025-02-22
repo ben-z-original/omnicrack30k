@@ -1,16 +1,7 @@
-<!--![gradio_demo](https://github.com/ben-z-original/omnicrack30k/assets/85626335/d4216a56-58dc-4b57-ba91-30ce5b62e17f)-->
-
 # OmniCrack30k
-*OmniCrack30k* is a compilation of datasets for structural crack segmentation. The best performing model is provided in this repo.
-<!--, kindly also checkout the corresponding huggingface demo:
+*OmniCrack30k* is a compilation of datasets for structural crack segmentation. The best performing [nnU-Net](https://github.com/MIC-DKFZ/nnUNet) model is provided in this repo.
 
-![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/b99341fa-0a14-4afe-be52-f0489fa506e1)
-[Huggingface Demo](https://huggingface.co/spaces/chrisbe/omnicrack30k-crack-segmentation)
-![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/8269551b-c0fc-4c92-bb3b-26481568b788)
-
-
-It only runs on CPU, so for large images it takes longer. The images above from the BCL dataset are 256×256 and took about 2 seconds.
--->
+![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/618579da-8f02-41c8-8a09-657bc18de859)
 
 ## Citation
 [CVPRW Paper](https://openaccess.thecvf.com/content/CVPR2024W/VAND/papers/Benz_OmniCrack30k_A_Benchmark_for_Crack_Segmentation_and_the_Reasonable_Effectiveness_CVPRW_2024_paper.pdf)
@@ -26,24 +17,15 @@ If you find our work useful, kindly cite accordingly:
 }
 ```
 
-## Installation
+## Run Model
+### Installation
 ```
 # create and activate conda environment
 conda create --name omnicrack30k python=3.10
 conda activate omnicrack30k
 
-# clone and install repo
+# clone and install repository
 git clone https://github.com/ben-z-original/omnicrack30k
-cd omnicrack30k
-pip install -e .
-```
-
-## Run Model
-
-```
-git clone https://github.com/ben-z-original/omnicrack30k
-conda create --name py310 python=3.10
-conda activate py310
 cd omnicrack30k
 pip install -e .
 ```
@@ -69,9 +51,6 @@ python -m omnicrack30k.evaluation path_to_omnicrack30k_rootdir test --subset Cer
 ## Dataset(s)
 
 ### Overview
-![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/618579da-8f02-41c8-8a09-657bc18de859)
-
-
 ![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/7a09d4d1-8dc0-40b1-8a1c-74a6c0e7b9d9)
 
 ### Download
