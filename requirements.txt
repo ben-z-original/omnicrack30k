@@ -4,3 +4,4 @@ gdown==5.2.0
 opencv-python==4.9.0.80
 numpy==1.25.2
 gradio==4.44.1
+transformers==4.49.0
