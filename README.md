@@ -1,7 +1,8 @@
 # OmniCrack30k
 *OmniCrack30k* is a compilation of datasets for structural crack segmentation. The best performing [nnU-Net](https://github.com/MIC-DKFZ/nnUNet) model is provided in this repo.
-
-![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/618579da-8f02-41c8-8a09-657bc18de859)
+<div align="center">
+	<img src="https://github.com/ben-z-original/omnicrack30k/assets/85626335/618579da-8f02-41c8-8a09-657bc18de859" width="70%">
+</div>
 
 ## Citation
 [CVPRW Paper](https://openaccess.thecvf.com/content/CVPR2024W/VAND/papers/Benz_OmniCrack30k_A_Benchmark_for_Crack_Segmentation_and_the_Reasonable_Effectiveness_CVPRW_2024_paper.pdf)
