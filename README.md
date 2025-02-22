@@ -1,7 +1,8 @@
-![gradio_demo](https://github.com/ben-z-original/omnicrack30k/assets/85626335/d4216a56-58dc-4b57-ba91-30ce5b62e17f)
+<!--![gradio_demo](https://github.com/ben-z-original/omnicrack30k/assets/85626335/d4216a56-58dc-4b57-ba91-30ce5b62e17f)-->
 
 # OmniCrack30k
-*OmniCrack30k* is a compilation of datasets for structural crack segmentation. The best performing model is provided in this repo, kindly also checkout the corresponding huggingface demo:
+*OmniCrack30k* is a compilation of datasets for structural crack segmentation. The best performing model is provided in this repo.
+<!--, kindly also checkout the corresponding huggingface demo:
 
 ![image](https://github.com/ben-z-original/omnicrack30k/assets/85626335/b99341fa-0a14-4afe-be52-f0489fa506e1)
 [Huggingface Demo](https://huggingface.co/spaces/chrisbe/omnicrack30k-crack-segmentation)
@@ -9,7 +10,7 @@
 
 
 It only runs on CPU, so for large images it takes longer. The images above from the BCL dataset are 256×256 and took about 2 seconds.
-
+-->
 
 ## Citation
 [CVPRW Paper](https://openaccess.thecvf.com/content/CVPR2024W/VAND/papers/Benz_OmniCrack30k_A_Benchmark_for_Crack_Segmentation_and_the_Reasonable_Effectiveness_CVPRW_2024_paper.pdf)
