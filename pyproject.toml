@@ -1,7 +1,7 @@
 [project]
 name = "omnicrack30k"
 version = "1.0.0"
-requires-python = "3.10"
+requires-python = "==3.10"
 description = "Dataset and model for structural crack segmentation."
 readme = "README.md"
 license = { file = "LICENSE" }
