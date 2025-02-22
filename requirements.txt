@@ -1,6 +1,6 @@
-torch==2.0.1
+torch>=2.0.0
 nnunetv2 @ git+https://github.com/MIC-DKFZ/nnUNet.git@0db95609c27d7ba838fb0c25e91bf6b7da2cb654#egg=nnunetv2
 gdown==5.2.0
 opencv-python==4.9.0.80
 numpy==1.25.2
-gradio==4.37.2
+gradio
