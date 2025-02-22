@@ -26,7 +26,17 @@ If you find our work useful, kindly cite accordingly:
 }
 ```
 
+## Installation
+```
+# create and activate conda environment
+conda create --name omnicrack30k python=3.10
+conda activate omnicrack30k
 
+# clone and install repo
+git clone https://github.com/ben-z-original/omnicrack30k
+cd omnicrack30k
+pip install -e .
+```
 
 ## Run Model
 
