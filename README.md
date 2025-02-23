@@ -1,5 +1,5 @@
 # OmniCrack30k
-*OmniCrack30k* is a compilation of datasets for structural crack segmentation. The best performing [nnU-Net](https://github.com/MIC-DKFZ/nnUNet) model is provided in this repo.
+*OmniCrack30k* is a compilation of datasets for structural crack segmentation. The best performing [nnU-Net](https://github.com/MIC-DKFZ/nnUNet) model trained on this dataset is provided in this repo.
 
 ![Untitled 1](https://github.com/user-attachments/assets/540dbe43-a19f-40de-8c10-326ea18dd183)
 
@@ -20,7 +20,6 @@ If you find our work useful, kindly cite accordingly:
 
 ## Run Model
 ### Installation
-#### ... cloning the repository
 ```
 # create and activate conda environment
 conda create --name omnicrack30k python=3.10
@@ -30,13 +29,6 @@ conda activate omnicrack30k
 git clone https://github.com/ben-z-original/omnicrack30k
 cd omnicrack30k
 pip install -e .
-```
-
-#### ... without cloning the repository
-```
-conda create --name omnicrack30k python=3.10
-conda activate omnicrack30k
-pip install git+https://github.com/ben-z-original/omnicrack30k.git
 ```
 
 The plan, i.e., the trained parameters, will be automatically downloaded when one of the commands below is run, but can also be accessed via:
