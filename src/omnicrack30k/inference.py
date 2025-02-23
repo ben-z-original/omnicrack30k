@@ -7,6 +7,7 @@ import gradio as gr
 from pathlib import Path
 from argparse import ArgumentParser
 from skimage.morphology import thin
+from torchvision.transforms import Normalize
 from nnunetv2.inference.predict_from_raw_data import nnUNetPredictor
 
 
@@ -47,21 +48,36 @@ class OmniCrack30kModel:
 
         self.predictor.network.eval()
         self.preprocessor = self.predictor.configuration_manager.preprocessor_class()
-        
-        self.classes = ["background", "crack"]
-    
 
-    def __call__(self, img, vis=False, rgb=False):
-        # preprocess image
-        data_orig = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) if rgb else img
-        data = (data_orig - data_orig.mean((0, 1))) / data_orig.std((0, 1))
-        data = torch.tensor(data, dtype=torch.float32)
-        data = data.moveaxis(-1, 0).unsqueeze(1)
+        self.classes = ["background", "crack"]
+
+    def __call__(self, img, rgb=False):
+        # prepare image
+        img = torch.tensor(img, dtype=torch.float32)
+        img = img.moveaxis(-1, 0) if img.shape[0] != 3 else img
+        img[:, torch.all(img == 0, dim=0)] = \
+            torch.rand_like(img)[:, torch.all(img == 0, dim=0)]  # avoid patches of all zeros
+
+        # transform image
+        img = img[[2, 1, 0], ...] if rgb else img
+        data = Normalize(img.mean((1, 2)), img.std((1, 2)))(img)
+        data = data.unsqueeze(1)
 
         # run segmentation
         logits = self.predictor.predict_logits_from_preprocessed_data(data).squeeze().cpu()
-        softmax = torch.nn.functional.softmax(logits.to(torch.float32), dim=0).numpy()
-        argmax = 255 * torch.argmax(logits, dim=0).to(torch.uint8).numpy()
+        softmax = torch.nn.functional.softmax(logits.to(torch.float32), dim=0)
+        argmax = torch.argmax(logits, dim=0).to(torch.uint8)
+
+        return softmax, argmax
+
+    def predict_np(self, img, vis=False, rgb=False):
+        softmax, argmax = self.__call__(img)
+
+        # prepare outputs
+        softmax = softmax[self.classes.index("crack")].numpy()
+        argmax = 255 * argmax.numpy()
+
+        # compute centerlines
         centerlines = np.uint8(255 * thin(argmax))
 
         # invert for visualization
@@ -76,10 +92,10 @@ class OmniCrack30kModel:
             from matplotlib import pyplot as plt
 
             plt.subplot(221)
-            plt.imshow(data_orig)
+            plt.imshow(img)
             plt.title("Input Image")
             plt.subplot(222)
-            plt.imshow(softmax[1], 'gray')
+            plt.imshow(softmax, 'gray')
             plt.title("Softmax")
             plt.subplot(223)
             plt.imshow(argmax, 'gray')
@@ -90,7 +106,7 @@ class OmniCrack30kModel:
             plt.tight_layout()
             plt.show()
 
-        return softmax[1], argmax, centerlines
+        return softmax, argmax, centerlines
 
     def nnunet_preprocessing(self, imgpath):
         data, _, _ = self.preprocessor.run_case([imgpath],
@@ -111,7 +127,7 @@ def main():
     predictor = OmniCrack30kModel()
 
     if args.path is None:
-        demo = gr.Interface(fn=predictor,
+        demo = gr.Interface(fn=predictor.predict_np,
                             title="OmniCrack30k Crack Segmentation",
                             description="""
                                 Official model trained on the OmniCrack30k crack segmentation dataset. 
@@ -131,7 +147,7 @@ def main():
         paths = [path] if path.is_file() else sorted(path.glob("*"))
         for p in paths:
             img = cv2.imread(str(p), cv2.IMREAD_COLOR)
-            predictor(img, vis=args.no_vis)
+            predictor.predict_np(img, vis=args.no_vis)
 
 
 if __name__ == "__main__":
