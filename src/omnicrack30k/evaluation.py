@@ -48,7 +48,7 @@ def run_evaluation(datapath, split, subset=None, tolerance=4, planpath=None, fol
             true = cv2.imread(str((datapath / "centerlines" / split / f.name)), cv2.IMREAD_GRAYSCALE)
 
             # run inference and map classes
-            softmax, argmax, centerlines = predictor(img)
+            softmax, argmax, centerlines = predictor.predict_np(img)
             true, pred = np.uint8(true == 0), np.uint8(centerlines == 0)
 
             # some subsets (e.g. Stone331) provide resized masks -> correct that
