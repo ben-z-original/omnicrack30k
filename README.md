@@ -1,5 +1,5 @@
 # OmniCrack30k
-*OmniCrack30k* is a compilation of datasets for structural crack segmentation. The best performing [nnU-Net](https://github.com/MIC-DKFZ/nnUNet) model is provided in this repo.
+*OmniCrack30k* is a compilation of datasets for structural crack segmentation. The best performing [nnU-Net](https://github.com/MIC-DKFZ/nnUNet) model trained on this dataset is provided in this repo.
 
 ![Untitled 1](https://github.com/user-attachments/assets/540dbe43-a19f-40de-8c10-326ea18dd183)
 
