@@ -49,7 +49,10 @@ class OmniCrack30kModel:
         self.predictor.network.eval()
         self.preprocessor = self.predictor.configuration_manager.preprocessor_class()
 
+        # the follwing attributes are only relevant for the crackstructures multiview approach
+        # https://github.com/ben-z-original/crackstructures
         self.classes = ["background", "crack"]
+        self.class_weight = torch.tensor([1, 10], dtype=torch.float16)
 
     def __call__(self, img, rgb=False):
         # prepare image
