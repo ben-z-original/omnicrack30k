@@ -74,7 +74,7 @@ class OmniCrack30kModel:
         return softmax, argmax
 
     def predict_np(self, img, vis=False, rgb=False):
-        softmax, argmax = self.__call__(img)
+        softmax, argmax = self.__call__(img, rgb=rgb)
 
         # prepare outputs
         softmax = softmax[self.classes.index("crack")].numpy()
