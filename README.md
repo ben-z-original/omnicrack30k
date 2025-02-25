@@ -60,7 +60,6 @@ python -m omnicrack30k.evaluation path_to_omnicrack30k_rootdir test --subset Cer
 <div align="center">
 	<img src="https://github.com/ben-z-original/omnicrack30k/assets/85626335/7a09d4d1-8dc0-40b1-8a1c-74a6c0e7b9d9" width="60%">
 </div>
-![image]()
 
 ### Download
 Due to license issues, the dataset cannot openly be shared. If you need access for research purposes to replicate our results, etc., kindly send a request mail from your university/education account to christian.benz@uni-weimar.de with the following content, which you thereby acknowledge:
