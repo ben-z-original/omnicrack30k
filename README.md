@@ -18,6 +18,16 @@ If you find our work useful, kindly cite accordingly:
 }
 ```
 
+## Information
+
+If you're interested in OmniCrack30k you might also be interested in [CrackStructures and CrackEnsembles](https://github.com/ben-z-original/crackstructures) or [ENSTRECT](https://github.com/ben-z-original/enstrect):
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/a6cf3236-f984-4c83-a73f-954cf712faaa" width=35% alt="Indoors Predictions">
+    <img src="https://github.com/user-attachments/assets/5a6c6b74-d500-4e9e-9cb3-deaf048c6d2f" width=30% alt="ENSTRECT Rebars"> 
+    <img src="https://github.com/user-attachments/assets/bd44b1db-f6e2-4231-b3f4-8070b736e2fb" width=75% alt="CrackEnsembles">
+</p>
+
+
 ## Run Model
 ### Installation
 ```
@@ -32,7 +42,7 @@ pip install -e .
 ```
 
 The plan, i.e., the trained parameters, will be automatically downloaded when one of the commands below is run, but can also be accessed via:
-[Google Drive Link](https://drive.google.com/file/d/15S1dvjr7050kISlQ0JTiEPA1eeUDfoOl/view?usp=drive_link)
+[Google Drive Link](https://drive.google.com/file/d/15S1dvjr7050kISlQ0JTiEPA1eeUDfoOl/view?usp=drive_link).
 
 ### Start Local Gradio App
 The following command starts a local gradio app, which can be opened in the web browser, e.g., at http://127.0.0.1:7860. The infos and warnings concerning nnU-Net can be ignored.
