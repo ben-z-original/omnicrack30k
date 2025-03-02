@@ -20,11 +20,11 @@ If you find our work useful, kindly cite accordingly:
 
 ## Information
 
-If you're interested in OmniCrack30k you might also be interested in [CrackStructures and CrackEnsembles](https://github.com/ben-z-original/crackstructures) or [ENSTRECT](https://github.com/ben-z-original/enstrect):
+If you're interested in OmniCrack30k you might also be interested in our WACV'25 paper [CrackStructures and CrackEnsembles](https://github.com/ben-z-original/crackstructures) or our ECCVW'24 paper [ENSTRECT](https://github.com/ben-z-original/enstrect):
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/a6cf3236-f984-4c83-a73f-954cf712faaa" width=35% alt="Indoors Predictions">
-    <img src="https://github.com/user-attachments/assets/5a6c6b74-d500-4e9e-9cb3-deaf048c6d2f" width=30% alt="ENSTRECT Rebars"> 
-    <img src="https://github.com/user-attachments/assets/bd44b1db-f6e2-4231-b3f4-8070b736e2fb" width=75% alt="CrackEnsembles">
+    <img src="https://github.com/user-attachments/assets/a6cf3236-f984-4c83-a73f-954cf712faaa" width=25% alt="Indoors Predictions">
+    <img src="https://github.com/user-attachments/assets/bd44b1db-f6e2-4231-b3f4-8070b736e2fb" width=45% alt="CrackEnsembles">
+    <img src="https://github.com/user-attachments/assets/5a6c6b74-d500-4e9e-9cb3-deaf048c6d2f" width=25% alt="ENSTRECT Rebars"> 
 </p>
 
 
