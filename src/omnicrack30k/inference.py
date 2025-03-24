@@ -13,7 +13,7 @@ from nnunetv2.inference.predict_from_raw_data import nnUNetPredictor
 
 class OmniCrack30kModel:
     def __init__(self, planpath=None, folds=(0,), allow_tqdm=True,
-            url="https://drive.google.com/uc?id=15S1dvjr7050kISlQ0JTiEPA1eeUDfoOl"):
+                 url="https://drive.google.com/uc?id=15S1dvjr7050kISlQ0JTiEPA1eeUDfoOl"):
         # instantiate the nnUNetPredictor
         self.predictor = nnUNetPredictor(
             tile_step_size=0.5,
@@ -120,7 +120,7 @@ class OmniCrack30kModel:
         return data
 
 
-def main(predictor = OmniCrack30kModel()):
+def main(predictor, title, description):
     parser = ArgumentParser(description="""Start a local gradio app for crack segmentation
                                             or run on segmentation on provided filepath(s).""")
     parser.add_argument('path', nargs='?', default=None, help="Path to image or folder to be processes")
@@ -129,14 +129,8 @@ def main(predictor = OmniCrack30kModel()):
 
     if args.path is None:
         demo = gr.Interface(fn=predictor.predict_np,
-                            title="OmniCrack30k Crack Segmentation",
-                            description="""
-                                Official model trained on the OmniCrack30k crack segmentation dataset. 
-                                For details kindly refer to https://github.com/ben-z-original/omnicrack30k 
-                                and the corresponding [publication](https://openaccess.thecvf.com/content/CVPR2024W/VAND/papers/Benz_OmniCrack30k_A_Benchmark_for_Crack_Segmentation_and_the_Reasonable_Effectiveness_CVPRW_2024_paper.pdf).
-                                To limit runtime and computation resources, this demo runs on a single fold 
-                                (not the ensemble), which slightly reduces performance.
-                                """,
+                            title=title,
+                            description=description,
                             inputs=gr.Image(label="Input Image"),
                             outputs=[gr.Image(label="Softmax"),
                                      gr.Image(label="Argmax"),
@@ -152,4 +146,13 @@ def main(predictor = OmniCrack30kModel()):
 
 
 if __name__ == "__main__":
-    main()
+    predictor = OmniCrack30kModel()
+    title = "OmniCrack30k Crack Segmentation"
+    description = """
+        Official model trained on the OmniCrack30k crack segmentation dataset. 
+        For details kindly refer to https://github.com/ben-z-original/omnicrack30k 
+        and the corresponding [publication](https://openaccess.thecvf.com/content/CVPR2024W/VAND/papers/Benz_OmniCrack30k_A_Benchmark_for_Crack_Segmentation_and_the_Reasonable_Effectiveness_CVPRW_2024_paper.pdf).
+        To limit runtime and computation resources, this demo runs on a single fold 
+        (not the ensemble), which slightly reduces performance.
+        """
+    main(predictor, title, description)
