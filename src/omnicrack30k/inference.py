@@ -89,7 +89,7 @@ class OmniCrack30kModel:
         centerlines = 255 - centerlines
 
         if vis:
-            # needed because nnunet uses non-gui backend
+            # needed because nnunet enforces non-gui backend
             import matplotlib
             matplotlib.use("TkAgg")
             from matplotlib import pyplot as plt
@@ -120,14 +120,12 @@ class OmniCrack30kModel:
         return data
 
 
-def main():
+def main(predictor = OmniCrack30kModel()):
     parser = ArgumentParser(description="""Start a local gradio app for crack segmentation
                                             or run on segmentation on provided filepath(s).""")
     parser.add_argument('path', nargs='?', default=None, help="Path to image or folder to be processes")
     parser.add_argument('-nv', '--no_vis', action="store_false", help="Turn off visualization for image")
     args = parser.parse_args()
-
-    predictor = OmniCrack30kModel()
 
     if args.path is None:
         demo = gr.Interface(fn=predictor.predict_np,
