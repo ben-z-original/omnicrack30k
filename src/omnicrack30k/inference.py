@@ -13,7 +13,7 @@ from nnunetv2.inference.predict_from_raw_data import nnUNetPredictor
 
 class OmniCrack30kModel:
     def __init__(self, planpath=None, folds=(0,), allow_tqdm=True,
-            url = "https://drive.google.com/uc?id=15S1dvjr7050kISlQ0JTiEPA1eeUDfoOl"):
+            url="https://drive.google.com/uc?id=15S1dvjr7050kISlQ0JTiEPA1eeUDfoOl"):
         # instantiate the nnUNetPredictor
         self.predictor = nnUNetPredictor(
             tile_step_size=0.5,
