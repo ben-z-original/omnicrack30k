@@ -18,6 +18,16 @@ If you find our work useful, kindly cite accordingly:
 }
 ```
 
+## Information
+
+If you're interested in OmniCrack30k you might also be interested in our WACV'25 paper [CrackStructures and CrackEnsembles](https://github.com/ben-z-original/crackstructures) or our ECCVW'24 paper [ENSTRECT](https://github.com/ben-z-original/enstrect):
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/a6cf3236-f984-4c83-a73f-954cf712faaa" width=25% alt="Indoors Predictions">
+    <img src="https://github.com/user-attachments/assets/bd44b1db-f6e2-4231-b3f4-8070b736e2fb" width=45% alt="CrackEnsembles">
+    <img src="https://github.com/user-attachments/assets/5a6c6b74-d500-4e9e-9cb3-deaf048c6d2f" width=25% alt="ENSTRECT Rebars"> 
+</p>
+
+
 ## Run Model
 ### Installation
 ```
@@ -32,7 +42,7 @@ pip install -e .
 ```
 
 The plan, i.e., the trained parameters, will be automatically downloaded when one of the commands below is run, but can also be accessed via:
-[Google Drive Link](https://drive.google.com/file/d/15S1dvjr7050kISlQ0JTiEPA1eeUDfoOl/view?usp=drive_link)
+[Google Drive Link](https://drive.google.com/file/d/15S1dvjr7050kISlQ0JTiEPA1eeUDfoOl/view?usp=drive_link).
 
 ### Start Local Gradio App
 The following command starts a local gradio app, which can be opened in the web browser, e.g., at http://127.0.0.1:7860. The infos and warnings concerning nnU-Net can be ignored.
@@ -60,7 +70,6 @@ python -m omnicrack30k.evaluation path_to_omnicrack30k_rootdir test --subset Cer
 <div align="center">
 	<img src="https://github.com/ben-z-original/omnicrack30k/assets/85626335/7a09d4d1-8dc0-40b1-8a1c-74a6c0e7b9d9" width="60%">
 </div>
-![image]()
 
 ### Download
 Due to license issues, the dataset cannot openly be shared. If you need access for research purposes to replicate our results, etc., kindly send a request mail from your university/education account to christian.benz@uni-weimar.de with the following content, which you thereby acknowledge:
