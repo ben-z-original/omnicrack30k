@@ -72,7 +72,7 @@ python -m omnicrack30k.evaluation path_to_omnicrack30k_rootdir test --subset Cer
 </div>
 
 ### Download
-Due to license issues, the dataset cannot openly be shared. If you need access for research purposes to replicate our results, etc., kindly send a request mail from your university/education account to christian.benz@uni-weimar.de with the following content, which you thereby acknowledge:
+Due to license issues, the dataset cannot openly be shared. If you need access for research purposes to replicate our results, etc., kindly send a request mail from your university/education account to zneb_naitsirhc@web.de with the following content, which you thereby acknowledge:
 
 ```Subject: Access OmniCrack30k Dataset```
 
