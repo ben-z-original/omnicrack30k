@@ -142,6 +142,7 @@ def main(predictor, title, description):
         paths = [path] if path.is_file() else sorted(path.glob("*"))
         for p in paths:
             img = cv2.imread(str(p), cv2.IMREAD_COLOR)
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             predictor.predict_np(img, vis=args.no_vis)
 
 
